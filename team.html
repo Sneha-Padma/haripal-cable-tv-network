@@ -1,0 +1,2854 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Team | Haripal Cable TV Network</title>
+
+<link rel="icon" href="images/HCN.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    linear-gradient(135deg,#081321,#0d1b2a,#102542);
+
+    background-size:300% 300%;
+
+    animation:bgMove 12s ease infinite;
+
+    overflow-x:hidden;
+
+    color:#fff;
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.navbar{
+
+    max-width:1350px;
+
+    margin:auto;
+
+    padding:16px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#111;
+
+}
+
+.logo img{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    margin-right:15px;
+
+}
+
+.logo h2{
+
+    font-size:23px;
+
+    color:#2563eb;
+
+}
+
+.logo span{
+
+    font-size:13px;
+
+    color:#64748b;
+
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:#334155;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.nav-links a:hover,
+.nav-links .active{
+
+    color:#2563eb;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:#2563eb;
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after{
+
+    width:100%;
+
+}
+
+
+/* MOBILE MENU */
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    color:#2563eb;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    padding:170px 20px 110px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    background:#2563eb33;
+
+    filter:blur(120px);
+
+    border-radius:50%;
+
+    top:-250px;
+    left:-200px;
+
+    animation:floatGlow 8s infinite alternate;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    background:#00e5ff22;
+
+    filter:blur(120px);
+
+    border-radius:50%;
+
+    bottom:-250px;
+    right:-180px;
+
+    animation:floatGlow 7s infinite alternate;
+
+}
+
+@keyframes floatGlow{
+
+    from{
+        transform:translateY(0) translateX(0);
+    }
+
+    to{
+        transform:translateY(40px) translateX(40px);
+    }
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+    color:#38bdf8;
+
+}
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    opacity:.9;
+
+}
+
+
+/* BACK BUTTON */
+
+.back-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:40px;
+
+    padding:15px 35px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    box-shadow:0 0 20px rgba(37,99,235,.4);
+
+}
+
+.back-btn:hover{
+
+    background:#0f62fe;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 25px rgba(0,229,255,.5),
+    0 0 45px rgba(37,99,235,.45);
+
+}
+
+
+/* =====================================================
+   SECTION COMMON
+===================================================== */
+
+.section{
+
+    max-width:1350px;
+
+    margin:auto;
+
+    padding:90px 20px;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.section-subtitle{
+
+    max-width:850px;
+
+    margin:0 auto 65px;
+
+    text-align:center;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#cfe3ff;
+
+}
+
+
+/* =====================================================
+   MANAGEMENT TEAM
+===================================================== */
+
+.management-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+    max-width:1050px;
+
+    margin:auto;
+
+}
+
+
+/* MEMBER CARD */
+
+.member{
+
+    position:relative;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:.7s ease;
+
+}
+
+.member.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.member::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-50%;
+
+    width:200%;
+
+    height:200%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,229,255,.12),
+        transparent 55%
+    );
+
+    pointer-events:none;
+
+}
+
+.member:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#00e5ff;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35),
+    0 0 35px rgba(0,229,255,.20);
+
+}
+
+
+/* MEMBER IMAGE */
+
+.member-image{
+
+    width:190px;
+
+    height:190px;
+
+    margin:0 auto 25px;
+
+    padding:6px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        45deg,
+        #00e5ff,
+        #2563eb,
+        #4f46e5,
+        #00e5ff
+    );
+
+    background-size:400% 400%;
+
+    animation:neonBorder 5s linear infinite;
+
+    box-shadow:
+    0 0 20px rgba(0,229,255,.35),
+    0 0 40px rgba(37,99,235,.25);
+
+}
+
+.member-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.95);
+
+    display:block;
+
+}
+
+@keyframes neonBorder{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+.member h3{
+
+    font-size:27px;
+
+    margin-bottom:10px;
+
+}
+
+.member .position{
+
+    color:#7dd3fc;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =====================================================
+   ACHIEVEMENTS
+===================================================== */
+
+.achievements{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.achievement{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 16px;
+
+    border-radius:40px;
+
+    background:rgba(37,99,235,.85);
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.achievement i{
+
+    color:#a5f3fc;
+
+}
+
+.achievement:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    background:#0f62fe;
+
+    box-shadow:0 0 18px rgba(0,229,255,.3);
+
+}
+
+
+/* =====================================================
+   SUPPORT SECTION
+===================================================== */
+
+.support-section{
+
+    max-width:1200px;
+
+    margin:30px auto 0;
+
+    padding:80px 20px;
+
+}
+
+.support-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.support-card{
+
+    padding:40px 35px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.09);
+
+    border:1px solid rgba(255,255,255,.13);
+
+    backdrop-filter:blur(18px);
+
+    transition:.5s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.support-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:#2563eb22;
+
+    filter:blur(60px);
+
+    right:-70px;
+    bottom:-70px;
+
+}
+
+.support-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00e5ff;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.3),
+    0 0 30px rgba(0,229,255,.18);
+
+}
+
+.support-icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #00b4ff
+    );
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 0 25px rgba(37,99,235,.35);
+
+}
+
+.support-card h3{
+
+    font-size:25px;
+
+    margin-bottom:15px;
+
+}
+
+.support-card p{
+
+    color:#d8e7ff;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+}
+
+
+/* =====================================================
+   MARKETING & RECHARGE
+===================================================== */
+
+.marketing-section{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:60px 20px 70px;
+
+}
+
+.marketing-card{
+
+    position:relative;
+
+    padding:55px 45px;
+
+    text-align:center;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(37,99,235,.18),
+        rgba(0,229,255,.08)
+    );
+
+    border:1px solid rgba(125,211,252,.25);
+
+    backdrop-filter:blur(20px);
+
+    overflow:hidden;
+
+    box-shadow:0 20px 55px rgba(0,0,0,.25);
+
+}
+
+.marketing-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:#2563eb25;
+
+    filter:blur(90px);
+
+    top:-150px;
+    left:-100px;
+
+}
+
+.marketing-icon{
+
+    width:85px;
+
+    height:85px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:25px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #00b4ff
+    );
+
+    font-size:35px;
+
+    box-shadow:
+    0 0 25px rgba(0,229,255,.35);
+
+}
+
+.marketing-card h2{
+
+    font-size:35px;
+
+    margin-bottom:20px;
+
+}
+
+.marketing-card p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:#dbeafe;
+
+    font-size:17px;
+
+    line-height:2;
+
+}
+
+.marketing-steps{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+
+.step{
+
+    padding:13px 20px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.step i{
+
+    color:#38bdf8;
+
+    margin-right:7px;
+
+}
+
+
+/* =====================================================
+   ONLINE PAYMENT QR SECTION
+===================================================== */
+
+.payment-section{
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:30px 20px 100px;
+
+}
+
+.payment-card{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:50px;
+
+    padding:55px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(37,99,235,.20),
+        rgba(0,229,255,.09)
+    );
+
+    border:1px solid rgba(125,211,252,.28);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.30),
+    inset 0 0 30px rgba(255,255,255,.025);
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:1s ease;
+
+}
+
+.payment-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.payment-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:#00e5ff20;
+
+    filter:blur(100px);
+
+    right:-150px;
+
+    top:-180px;
+
+    pointer-events:none;
+
+}
+
+.payment-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:#2563eb25;
+
+    filter:blur(80px);
+
+    left:-120px;
+
+    bottom:-120px;
+
+    pointer-events:none;
+
+}
+
+
+/* PAYMENT CONTENT */
+
+.payment-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.payment-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 16px;
+
+    margin-bottom:20px;
+
+    border-radius:50px;
+
+    background:rgba(0,229,255,.10);
+
+    border:1px solid rgba(0,229,255,.25);
+
+    color:#7dd3fc;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.payment-badge i{
+
+    color:#22d3ee;
+
+}
+
+.payment-content h2{
+
+    font-size:38px;
+
+    line-height:1.3;
+
+    margin-bottom:18px;
+
+}
+
+.payment-content h2 span{
+
+    color:#38bdf8;
+
+}
+
+.payment-content p{
+
+    color:#d8e7ff;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+
+}
+
+.payment-points{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.payment-point{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#e5f2ff;
+
+    font-size:14px;
+
+}
+
+.payment-point i{
+
+    width:27px;
+
+    height:27px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.75);
+
+    color:#a5f3fc;
+
+    font-size:12px;
+
+}
+
+
+/* QR AREA */
+
+.qr-area{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.qr-frame{
+
+    position:relative;
+
+    width:280px;
+
+    height:280px;
+
+    padding:10px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #2563eb,
+        #4f46e5,
+        #00e5ff
+    );
+
+    background-size:400% 400%;
+
+    animation:qrGlow 6s ease infinite;
+
+    box-shadow:
+    0 0 25px rgba(0,229,255,.35),
+    0 0 60px rgba(37,99,235,.25);
+
+}
+
+@keyframes qrGlow{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+.qr-inner{
+
+    width:100%;
+
+    height:100%;
+
+    padding:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#fff;
+
+    border-radius:20px;
+
+}
+
+.qr-inner img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    border-radius:8px;
+
+}
+
+.qr-label{
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#dff7ff;
+
+}
+
+.qr-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    margin-top:20px;
+
+}
+
+.qr-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #00a8ff
+    );
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+
+}
+
+.qr-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.35),
+    0 0 20px rgba(0,229,255,.25);
+
+}
+
+.qr-btn.secondary{
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+.qr-btn.secondary:hover{
+
+    background:rgba(255,255,255,.17);
+
+}
+
+
+/* =====================================================
+   QR MODAL
+===================================================== */
+
+.qr-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:2000;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.78);
+
+    backdrop-filter:blur(12px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+}
+
+.qr-modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.qr-modal-box{
+
+    position:relative;
+
+    max-width:430px;
+
+    width:100%;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(17,34,54,.97),
+        rgba(10,27,47,.97)
+    );
+
+    border:1px solid rgba(125,211,252,.25);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.6),
+    0 0 40px rgba(0,229,255,.12);
+
+    transform:scale(.85);
+
+    transition:.35s;
+
+}
+
+.qr-modal.active .qr-modal-box{
+
+    transform:scale(1);
+
+}
+
+.qr-modal-box h3{
+
+    font-size:23px;
+
+    margin-bottom:20px;
+
+}
+
+.modal-qr{
+
+    width:300px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    padding:12px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+}
+
+.modal-qr img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:8px;
+
+}
+
+.qr-close{
+
+    position:absolute;
+
+    top:15px;
+
+    right:18px;
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.10);
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.qr-close:hover{
+
+    background:#ef4444;
+
+    transform:rotate(90deg);
+
+}
+
+.modal-note{
+
+    margin-top:18px;
+
+    color:#bcd0ea;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    background:rgba(0,0,0,.25);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:#bcd0ea;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .management-grid,
+    .support-grid{
+
+        grid-template-columns:1fr;
+
+        max-width:600px;
+
+        margin:auto;
+
+    }
+
+    .hero h1{
+
+        font-size:45px;
+
+    }
+
+    .payment-card{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        max-width:650px;
+
+        margin:auto;
+
+    }
+
+    .payment-content{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .payment-points{
+
+        align-items:flex-start;
+
+        text-align:left;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .navbar{
+
+        padding:13px 20px;
+
+    }
+
+    .logo img{
+
+        width:48px;
+        height:48px;
+
+        margin-right:10px;
+
+    }
+
+    .logo h2{
+
+        font-size:17px;
+
+    }
+
+    .logo span{
+
+        font-size:10px;
+
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:76px;
+
+        right:-100%;
+
+        width:270px;
+
+        height:100vh;
+
+        background:#fff;
+
+        display:flex;
+
+        flex-direction:column;
+
+        padding:40px 30px;
+
+        gap:25px;
+
+        transition:.4s;
+
+        box-shadow:-10px 0 30px rgba(0,0,0,.15);
+
+    }
+
+    .nav-links.active{
+
+        right:0;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .hero{
+
+        padding:140px 20px 90px;
+
+    }
+
+    .hero h1{
+
+        font-size:37px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    .section-title{
+
+        font-size:33px;
+
+    }
+
+    .section-subtitle{
+
+        font-size:15px;
+
+    }
+
+    .member{
+
+        padding:35px 22px;
+
+    }
+
+    .member-image{
+
+        width:160px;
+        height:160px;
+
+    }
+
+    .member h3{
+
+        font-size:23px;
+
+    }
+
+    .marketing-card{
+
+        padding:40px 22px;
+
+    }
+
+    .marketing-card h2{
+
+        font-size:28px;
+
+    }
+
+    .marketing-card p{
+
+        font-size:15px;
+
+    }
+
+    .payment-section{
+
+        padding-left:15px;
+
+        padding-right:15px;
+
+    }
+
+    .payment-card{
+
+        padding:40px 22px;
+
+        border-radius:28px;
+
+    }
+
+    .payment-content h2{
+
+        font-size:29px;
+
+    }
+
+    .payment-content p{
+
+        font-size:14px;
+
+    }
+
+    .qr-frame{
+
+        width:250px;
+
+        height:250px;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+    .back-btn{
+
+        padding:13px 25px;
+
+    }
+
+    .section{
+
+        padding:70px 15px;
+
+    }
+
+    .support-section,
+    .marketing-section{
+
+        padding-left:15px;
+        padding-right:15px;
+
+    }
+
+    .support-card{
+
+        padding:30px 25px;
+
+    }
+
+    .member-image{
+
+        width:145px;
+        height:145px;
+
+    }
+
+    .payment-card{
+
+        padding:35px 18px;
+
+    }
+
+    .payment-content h2{
+
+        font-size:26px;
+
+    }
+
+    .qr-frame{
+
+        width:220px;
+
+        height:220px;
+
+        padding:8px;
+
+    }
+
+    .qr-inner{
+
+        padding:10px;
+
+    }
+
+    .qr-actions{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .qr-btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+
+<img src="images/HCN.jpg" alt="Haripal Cable TV Network Logo">
+
+<div>
+
+<h2>Haripal Cable TV Network</h2>
+
+<span>Your Trusted Broadband & Cable Service</span>
+
+</div>
+
+</a>
+
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html#feeds">Feeds</a>
+</li>
+
+<li>
+<a href="services.html">Services</a>
+</li>
+
+<li>
+<a href="gallery.html">Gallery</a>
+</li>
+
+<li>
+<a href="team.html" class="active">Team</a>
+</li>
+
+<li>
+<a href="about.html">About</a>
+</li>
+
+<li>
+<a href="contact.html">Contact</a>
+</li>
+
+</ul>
+
+
+<div class="menu-toggle">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Meet Our <span>Team</span>
+</h1>
+
+<p>
+
+At Haripal Cable TV Network, our team is committed to
+providing reliable Cable TV, Broadband Support and
+customer-focused service across Haripal and nearby areas.
+
+</p>
+
+
+<a href="index.html#feeds" class="back-btn">
+
+<i class="fas fa-arrow-left"></i>
+
+Back to Feed
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MANAGEMENT
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Our Leadership
+</h2>
+
+<p class="section-subtitle">
+
+The people behind Haripal Cable TV Network, working together
+to maintain dependable services and provide better customer support.
+
+</p>
+
+
+<div class="management-grid">
+
+
+<!-- =====================================================
+     FOUNDER
+===================================================== -->
+
+<div class="member">
+
+<div class="member-image">
+
+<img
+src="images/WhatsApp Image 2026-07-19 at 1.44.12 PM.jpeg"
+alt="Basudev Padma - Founder">
+
+</div>
+
+
+<h3>
+BASUDEV PADMA
+</h3>
+
+<div class="position">
+
+Founder • Proprietor • Network Operator
+
+</div>
+
+
+<div class="achievements">
+
+<div class="achievement">
+
+<i class="fas fa-award"></i>
+
+Awarded by HATHWAY • SONY • ZEE
+
+</div>
+
+
+<div class="achievement">
+
+<i class="fas fa-calendar-check"></i>
+
+36+ Years of Business Excellence
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     EXECUTIVE COORDINATOR
+===================================================== -->
+
+<div class="member">
+
+<div class="member-image">
+
+<img
+src="images/TCS.jpg"
+alt="Sneha Padma - Executive Coordinator">
+
+</div>
+
+
+<h3>
+SNEHA PADMA
+</h3>
+
+<div class="position">
+
+Executive Coordinator
+
+</div>
+
+
+<div class="achievements">
+
+<div class="achievement">
+
+<i class="fas fa-graduation-cap"></i>
+
+B.Tech (Computer Science)
+
+</div>
+
+
+<div class="achievement">
+
+<i class="fas fa-star"></i>
+
+3 HackerRank Silver Stars
+
+</div>
+
+
+<div class="achievement">
+
+<i class="fas fa-certificate"></i>
+
+Google Classroom Gold Badge
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BROADBAND & CABLE SUPPORT
+===================================================== -->
+
+<section class="support-section">
+
+<h2 class="section-title">
+
+Our Service Support
+
+</h2>
+
+<p class="section-subtitle">
+
+We provide dedicated support for both Broadband and Cable TV
+customers. Our team coordinates installation, maintenance,
+technical assistance and customer support according to your needs.
+
+</p>
+
+
+<div class="support-grid">
+
+
+<!-- BROADBAND -->
+
+<div class="support-card">
+
+<div class="support-icon">
+
+<i class="fas fa-wifi"></i>
+
+</div>
+
+<h3>
+Broadband Support
+</h3>
+
+<p>
+
+We provide Broadband support for new connections,
+installation assistance, router and network-related support,
+technical troubleshooting and service coordination.
+
+If you experience a Broadband-related issue, simply connect
+with us and we will coordinate the required support for you.
+
+</p>
+
+</div>
+
+
+
+<!-- CABLE -->
+
+<div class="support-card">
+
+<div class="support-icon">
+
+<i class="fas fa-tv"></i>
+
+</div>
+
+<h3>
+Cable TV Support
+</h3>
+
+<p>
+
+We provide Cable TV support including service assistance,
+STB-related support, signal-related issues, maintenance and
+customer service coordination.
+
+For any Cable TV issue, contact us and our team will guide
+you with the necessary assistance.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MARKETING & RECHARGE COLLECTION
+===================================================== -->
+
+<section class="marketing-section">
+
+<div class="marketing-card">
+
+
+<div class="marketing-icon">
+
+<i class="fas fa-hand-holding-heart"></i>
+
+</div>
+
+
+<h2>
+Marketing & Recharge Assistance
+</h2>
+
+
+<p>
+For customers who prefer to pay their recharge or subscription
+amount in cash, we also provide convenient collection assistance.
+
+You do not need to search for a separate person or visit the office
+just for payment. Simply connect with Haripal Cable TV Network
+and inform us that you want to make your payment in cash.
+
+We will coordinate with our marketing team and ask them to
+connect with you. Our marketing representative can collect the
+cash from you and complete the required recharge or payment
+process on your behalf.
+
+</p>
+
+
+<div class="marketing-steps">
+
+<div class="step">
+
+<i class="fas fa-phone"></i>
+
+1. Connect With Us
+
+</div>
+
+
+<div class="step">
+
+<i class="fas fa-user-group"></i>
+
+2. We Inform Our Marketing Team
+
+</div>
+
+
+<div class="step">
+
+<i class="fas fa-money-bill-wave"></i>
+
+3. Cash Collection
+
+</div>
+
+
+<div class="step">
+
+<i class="fas fa-check-circle"></i>
+
+4. Recharge Completed
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ONLINE PAYMENT / QR SECTION
+===================================================== -->
+
+<section class="payment-section">
+
+<div class="payment-card">
+
+
+<!-- PAYMENT INFORMATION -->
+
+<div class="payment-content">
+
+<div class="payment-badge">
+
+<i class="fas fa-shield-halved"></i>
+
+Secure Online Payment
+
+</div>
+
+
+<h2>
+
+Pay Your <span>Recharge / Subscription</span>
+Online
+
+</h2>
+
+
+<p>
+
+You can conveniently pay your Broadband or Cable TV
+recharge/subscription amount online by scanning the QR code.
+After completing the payment, please keep your transaction
+confirmation for reference.
+
+</p>
+
+
+<div class="payment-points">
+
+<div class="payment-point">
+
+<i class="fas fa-qrcode"></i>
+
+<span>Scan the QR code using your UPI app.</span>
+
+</div>
+
+
+<div class="payment-point">
+
+<i class="fas fa-indian-rupee-sign"></i>
+
+<span>Enter the correct payment amount.</span>
+
+</div>
+
+
+<div class="payment-point">
+
+<i class="fas fa-circle-check"></i>
+
+<span>Complete the payment and save the confirmation.</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- QR CODE -->
+
+<div class="qr-area">
+
+<div class="qr-frame">
+
+<div class="qr-inner">
+
+<img
+src="images/payment.qr.jpeg"
+alt="Haripal Cable TV Network Online Payment QR Code"
+id="paymentQR">
+
+</div>
+
+</div>
+
+
+<div class="qr-label">
+
+Scan to Pay Online
+
+</div>
+
+
+<div class="qr-actions">
+
+<a
+href="images/payment.qr.jpeg"
+target="_blank"
+rel="noopener noreferrer"
+class="qr-btn">
+
+<i class="fas fa-expand"></i>
+
+View QR
+
+</a>
+
+
+<a
+href="images/payment.qr.jpeg"
+download="Haripal-Cable-TV-Network-Payment-QR.png"
+class="qr-btn secondary">
+
+<i class="fas fa-download"></i>
+
+Save QR
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QR MODAL
+===================================================== -->
+
+<div class="qr-modal" id="qrModal">
+
+<div class="qr-modal-box">
+
+
+<button
+class="qr-close"
+id="qrClose"
+aria-label="Close QR">
+
+<i class="fas fa-xmark"></i>
+
+</button>
+
+
+<h3>
+
+Scan to Pay
+
+</h3>
+
+
+<div class="modal-qr">
+
+<img
+src="images/payment-qr.png"
+alt="Online Payment QR Code">
+
+</div>
+
+
+<p class="modal-note">
+
+Open your preferred UPI application and scan this QR code
+to complete your Broadband or Cable TV payment.
+
+</p>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<p>
+
+© 2026 Haripal Cable TV Network
+
+<br>
+
+Providing Reliable Cable TV & Broadband Services
+
+</p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuToggle =
+document.querySelector(".menu-toggle");
+
+const navLinks =
+document.querySelector(".nav-links");
+
+
+if(menuToggle){
+
+    menuToggle.addEventListener("click",()=>{
+
+        navLinks.classList.toggle("active");
+
+    });
+
+}
+
+
+/* CLOSE MOBILE MENU AFTER CLICK */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+
+/* =====================================================
+   MANAGEMENT CARD SCROLL ANIMATION
+===================================================== */
+
+const members =
+document.querySelectorAll(".member");
+
+
+const memberObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.20
+}
+
+);
+
+
+members.forEach(member=>{
+
+    memberObserver.observe(member);
+
+});
+
+
+
+/* =====================================================
+   SUPPORT CARD REVEAL
+===================================================== */
+
+const supportCards =
+document.querySelectorAll(".support-card");
+
+
+const supportObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.animate(
+
+                [
+                    {
+                        opacity:0,
+                        transform:"translateY(50px)"
+                    },
+
+                    {
+                        opacity:1,
+                        transform:"translateY(0)"
+                    }
+
+                ],
+
+                {
+                    duration:800,
+                    easing:"ease-out",
+                    fill:"forwards"
+                }
+
+            );
+
+            supportObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.15
+}
+
+);
+
+
+supportCards.forEach(card=>{
+
+    supportObserver.observe(card);
+
+});
+
+
+
+/* =====================================================
+   MARKETING CARD REVEAL
+===================================================== */
+
+const marketingCard =
+document.querySelector(".marketing-card");
+
+
+const marketingObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.animate(
+
+                [
+                    {
+                        opacity:0,
+                        transform:"translateY(60px)"
+                    },
+
+                    {
+                        opacity:1,
+                        transform:"translateY(0)"
+                    }
+
+                ],
+
+                {
+                    duration:1000,
+                    easing:"ease-out",
+                    fill:"forwards"
+                }
+
+            );
+
+            marketingObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.15
+}
+
+);
+
+
+if(marketingCard){
+
+    marketingObserver.observe(marketingCard);
+
+}
+
+
+
+/* =====================================================
+   PAYMENT CARD REVEAL
+===================================================== */
+
+const paymentCard =
+document.querySelector(".payment-card");
+
+
+const paymentObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+            paymentObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.15
+}
+
+);
+
+
+if(paymentCard){
+
+    paymentObserver.observe(paymentCard);
+
+}
+
+
+
+/* =====================================================
+   QR MODAL
+===================================================== */
+
+const viewQRBtn =
+document.getElementById("viewQRBtn");
+
+const qrModal =
+document.getElementById("qrModal");
+
+const qrClose =
+document.getElementById("qrClose");
+
+
+/* OPEN QR */
+
+if(viewQRBtn){
+
+    viewQRBtn.addEventListener("click",()=>{
+
+        qrModal.classList.add("active");
+
+        document.body.style.overflow="hidden";
+
+    });
+
+}
+
+
+/* CLOSE QR */
+
+if(qrClose){
+
+    qrClose.addEventListener("click",()=>{
+
+        qrModal.classList.remove("active");
+
+        document.body.style.overflow="";
+
+    });
+
+}
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+if(qrModal){
+
+    qrModal.addEventListener("click",(event)=>{
+
+        if(event.target === qrModal){
+
+            qrModal.classList.remove("active");
+
+            document.body.style.overflow="";
+
+        }
+
+    });
+
+}
+
+
+/* CLOSE WITH ESCAPE */
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.key === "Escape"){
+
+        qrModal.classList.remove("active");
+
+        document.body.style.overflow="";
+
+    }
+
+});
+
+
+
+/* =====================================================
+   QR IMAGE ERROR CHECK
+===================================================== */
+
+const paymentQR =
+document.getElementById("paymentQR");
+
+
+if(paymentQR){
+
+    paymentQR.addEventListener("error",()=>{
+
+        paymentQR.alt =
+        "Payment QR image not found. Please add payment-qr.png inside the images folder.";
+
+        paymentQR.style.opacity=".35";
+
+    });
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+```

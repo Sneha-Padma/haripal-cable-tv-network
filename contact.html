@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Haripal Cable TV Network</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- AOS Animation -->
+
+<link
+href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+rel="stylesheet">
+
+
+
+<style>
+/*==========================
+CONTACT OPTIONS
+==========================*/
+.contact-card{
+padding:25px;
+background:#f8fbff;
+border:1px solid #e7eefb;
+border-radius:18px;
+margin-bottom:20px;
+}
+
+.contact-card:last-child{
+margin-bottom:0;
+}
+
+.contact-card p{
+font-size:17px;
+color:#475569;
+}
+
+.contact-card h3{
+
+margin-bottom:10px;
+
+color:#2563eb;
+
+}
+
+.contact-card p{
+
+font-size:18px;
+
+margin-bottom:18px;
+
+}
+
+.contact-buttons{
+display:flex;
+gap:18px;
+margin-top:18px;
+}
+.call-btn,
+
+.wa-btn{
+
+flex:1;
+
+text-align:center;
+
+padding:14px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#fff;
+
+transition:.35s;
+
+}
+
+.call-btn{
+
+background:#2563eb;
+
+}
+
+.call-btn:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-4px);
+
+}
+
+.wa-btn{
+
+background:#25D366;
+
+}
+
+.wa-btn:hover{
+
+background:#18b954;
+
+transform:translateY(-4px);
+
+}
+
+hr{
+
+margin:30px 0;
+
+border:none;
+
+height:1px;
+
+background:#ddd;
+
+}
+
+
+/*==========================
+NAVBAR
+==========================*/
+
+header{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+background:#ffffff;
+
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+z-index:999;
+
+}
+
+.navbar{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:18px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+text-decoration:none;
+
+}
+
+.logo img{
+
+width:60px;
+
+margin-right:15px;
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+color:#2563eb;
+
+}
+
+.logo span{
+
+font-size:13px;
+
+color:#64748b;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:#334155;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#2563eb;
+
+}
+
+.menu-toggle{
+
+display:none;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+@media(max-width:900px){
+
+.nav-links{
+
+position:fixed;
+
+top:90px;
+
+right:-100%;
+
+width:250px;
+
+height:100vh;
+
+background:white;
+
+display:flex;
+
+flex-direction:column;
+
+padding:40px;
+
+transition:.4s;
+
+}
+
+.nav-links.active{
+
+right:0;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+}
+
+}
+
+/*==========================
+HERO
+==========================*/
+
+.contact-hero{
+
+position:relative;
+
+overflow:hidden;
+
+padding:190px 20px 140px;
+
+text-align:center;
+
+background:linear-gradient(135deg,#2563eb,#0f172a);
+
+color:white;
+
+}
+.contact-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+top:-220px;
+
+right:-150px;
+
+animation:heroRotate 18s linear infinite;
+
+}
+
+.contact-hero::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+bottom:-160px;
+
+left:-120px;
+
+animation:heroRotate 12s linear infinite reverse;
+
+}
+
+@keyframes heroRotate{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.contact-hero h1{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+}
+
+.contact-hero p{
+
+font-size:20px;
+
+max-width:750px;
+
+margin:auto;
+
+line-height:1.8;
+
+}
+
+/*==========================
+CONTACT SECTION
+==========================*/
+
+.contact-section{
+max: width 1350px;
+margin:80px auto;
+padding:0 20px;
+
+display:grid;
+
+grid-template-columns:1.4fr 1fr;
+
+gap:45px;
+align-items:stretch;
+}
+
+/*==========================
+GLASS CARD
+==========================*/
+
+.glass{
+background:#fff;
+border-radius:25px;
+padding:40px;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+
+min-height:620px;
+}
+.glass::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.45),
+transparent
+);
+
+transition:.7s;
+
+}
+
+.glass:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 30px 70px rgba(37,99,235,.18);
+
+}
+
+.glass:hover::before{
+
+left:100%;
+
+}
+.glass h2{
+
+margin-bottom:30px;
+
+color:#0f172a;
+
+}
+
+/*==========================
+CONTACT INFO
+==========================*/
+
+.info{
+display:flex;
+align-items:flex-start;
+gap:20px;
+padding:20px;
+margin-bottom:20px;
+border-radius:16px;
+transition:.3s;
+background:#fff;
+}
+
+.info:hover{
+background:#f5f9ff;
+transform:translateX(6px);
+}
+
+.info i{
+width:55px;
+height:55px;
+background:#eaf2ff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+color:#2563eb;
+flex-shrink:0;
+}
+
+.info div{
+flex:1;
+}
+
+.info h3{
+margin:0 0 8px;
+font-size:20px;
+color:#111827;
+}
+
+.info p{
+margin:0;
+font-size:16px;
+line-height:1.8;
+color:#475569;
+}
+
+.info a{
+display:inline;
+color:#2563eb;
+font-weight:600;
+text-decoration:none;
+}
+
+.info a:hover{
+text-decoration:underline;
+}
+
+/*==========================
+FORM
+==========================*/
+
+input,
+
+textarea{
+
+width:100%;
+
+padding:16px;
+
+margin-bottom:20px;
+
+border-radius:12px;
+
+border:none;
+
+outline:none;
+
+background:white;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+input:focus,
+
+textarea:focus{
+
+box-shadow:0 0 12px rgba(37,99,235,.3);
+
+}
+
+textarea{
+
+height:170px;
+
+resize:none;
+
+}
+
+button{
+
+width:100%;
+
+padding:16px;
+
+background:#2563eb;
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-3px);
+
+}
+
+/*==========================
+MAP
+==========================*/
+.visit-office{
+
+
+max-width:900px;
+width:90%;
+margin:100px auto;
+padding:70px;
+
+background:#fff;
+border-radius:35px;
+box-shadow:0 25px 80px rgba(0,0,0,.08);
+
+position:relative;
+overflow:hidden;
+text-align:center;
+
+}
+.visit-office::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:rgba(37,99,235,.08);
+
+border-radius:50%;
+
+top:-120px;
+
+left:-120px;
+
+animation:rotateCircle 18s linear infinite;
+
+}
+
+.visit-office::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+background:rgba(37,99,235,.05);
+
+border-radius:50%;
+
+bottom:-80px;
+
+right:-80px;
+
+animation:rotateCircle 14s linear infinite reverse;
+
+}
+
+@keyframes rotateCircle{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.location-circle{
+
+width:140px;
+
+height:140px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#2563eb,#0f172a);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-size:60px;
+
+box-shadow:0 20px 45px rgba(37,99,235,.35);
+
+animation:floatIcon 3s ease-in-out infinite;
+
+position:relative;
+
+z-index:2;
+
+transition:.4s;
+
+}
+
+.location-circle:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 25px 60px rgba(37,99,235,.5);
+
+}
+
+.visit-office h2{
+
+    margin-top:35px;
+
+    font-size:38px;
+
+    color:#0f172a;
+
+}
+
+.visit-office p{
+
+    margin:25px 0;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#555;
+
+}
+
+.map-button{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:18px 38px;
+
+background:#2563eb;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:50px;
+
+font-weight:600;
+
+font-size:16px;
+
+transition:.4s;
+
+box-shadow:0 12px 30px rgba(37,99,235,.25);
+
+}
+
+.map-button:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(37,99,235,.4);
+
+}
+
+
+@keyframes floatIcon{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/*==========================
+WHATSAPP
+==========================*/
+
+.whatsapp{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:70px;
+
+height:70px;
+
+background:#25d366;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-decoration:none;
+
+font-size:38px;
+
+color:white;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.12);
+
+}
+.company-name{
+
+color:#3b82f6;
+
+font-size:28px;
+
+margin-bottom:18px;
+
+white-space:nowrap;
+
+}
+/*==========================
+PREMIUM FOOTER
+==========================*/
+
+footer{
+width:100%;
+background:#0f172a;
+color:#fff;
+padding:70px 0 25px;
+margin-top:100px;
+border-top:4px solid #2563eb;
+}
+
+.footer-container{
+max-width:1300px;
+margin:auto;
+padding:0 40px;
+display:grid;
+grid-template-columns:2.5fr 1fr 1.3fr 1.7fr;
+gap:60px;
+}
+.footer-box h3,
+.footer-box h4{
+
+margin-bottom:18px;
+
+color:white;
+
+}
+
+.footer-box p{
+color:#cbd5e1;
+line-height:1.8;
+font-size:15px;
+}
+.footer-box a{
+display:block;
+
+padding:6px 0;
+
+font-size:15px;
+
+color:#cbd5e1;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.footer-box a:hover{
+
+color:#ffffff;
+
+padding-left:8px;
+
+}
+
+footer hr{
+
+margin:40px 0 20px;
+
+border:none;
+
+height:1px;
+
+background:#334155;
+
+}
+
+.footer-bottom{
+
+text-align:center;
+
+color:#94a3b8;
+
+font-size:15px;
+
+}
+
+@media(max-width:900px){
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+.footer-box{
+opacity:0;
+transform:translateY(40px);
+animation:footerFade .8s ease forwards;
+}
+
+.footer-box:nth-child(1){
+animation-delay:.2s;
+}
+
+.footer-box:nth-child(2){
+animation-delay:.4s;
+}
+
+.footer-box:nth-child(3){
+animation-delay:.6s;
+}
+
+.footer-box:nth-child(4){
+animation-delay:.8s;
+}
+
+@keyframes footerFade{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/*==========================
+MOBILE
+==========================*/
+
+@media(max-width:900px){
+
+.contact-section{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-hero h1{
+
+font-size:40px;
+
+}
+
+.contact-hero p{
+
+font-size:17px;
+
+}
+
+}
+@media (max-width: 992px){
+
+.navbar{
+padding:15px 20px;
+}
+
+.contact-section,
+.footer-container{
+grid-template-columns:1fr;
+}
+
+.contact-hero h1{
+font-size:42px;
+}
+
+.contact-hero p{
+font-size:18px;
+}
+
+.visit-office{
+width:95%;
+padding:50px 30px;
+}
+
+.location-circle{
+width:110px;
+height:110px;
+font-size:48px;
+}
+
+}
+@media (max-width:768px){
+
+.logo h2{
+font-size:18px;
+}
+
+.logo span{
+font-size:11px;
+}
+
+.contact-hero{
+padding:140px 20px 80px;
+}
+
+.contact-hero h1{
+font-size:34px;
+}
+
+.contact-hero p{
+font-size:16px;
+}
+
+.contact-buttons{
+flex-direction:column;
+}
+
+.call-btn,
+.wa-btn{
+width:100%;
+}
+
+.glass{
+padding:25px;
+min-height:auto;
+}
+
+.info{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.info i{
+margin-bottom:10px;
+}
+
+.visit-office{
+padding:40px 20px;
+}
+
+.visit-office h2{
+font-size:30px;
+}
+
+.map-button{
+width:100%;
+justify-content:center;
+}
+
+.footer-container{
+padding:0 20px;
+}
+
+.company-name{
+white-space:normal;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+
+<img src="images/HCN.jpg" alt="Logo">
+
+<div>
+
+<h2>Haripal Cable TV Network</h2>
+
+<span>Your Trusted Broadband & Cable Service</span>
+
+</div>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="index.html#feeds">Feeds</a></li>
+
+<li><a href="services.html">Services</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="team.html">Team</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<div class="menu-toggle">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="contact-hero">
+
+<h1 data-aos="fade-down">
+
+Contact Haripal Cable TV Network
+
+</h1>
+
+<p data-aos="fade-up">
+
+Need a new Broadband or Cable TV connection?
+Our team is always ready to help you with installation,
+technical support and customer service.
+
+</p>
+
+</section>
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section">
+
+<div class="glass" data-aos="fade-right">
+
+<h2>Contact Information</h2>
+
+<div class="info">
+
+<i class="fas fa-phone-alt"></i>
+
+<div>
+
+<h3>📞 Phone Numbers</h3>
+
+<p>
+
+<a href="tel:+919800772177">+91 9800772177</a>
+
+<br>
+
+<a href="tel:+917501230307">+91 7501230307</a>
+
+</p>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<i class="fas fa-clock"></i>
+
+<div>
+
+<h3>🕒 Office Hours</h3>
+
+<p>
+
+Sunday - Saturday
+
+<br><br>
+
+10:00 AM – 02:00 PM
+
+<br>
+
+04:30 PM – 08:00 PM
+
+</p>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<i class="fas fa-map-marker-alt"></i>
+
+<div>
+
+<h3>📍 Office Address</h3>
+
+<p>
+
+Haripal Cable TV Network
+
+<br>
+
+Near Indian Bank
+
+<br>
+
+Haripal, Hooghly
+
+<br>
+
+West Bengal - 712405
+
+</p>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<i class="fas fa-envelope"></i>
+
+<div>
+
+<h3>Email</h3>
+
+<p>
+
+haripalcabletvnetwork@gmail.com
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= CONTACT OPTIONS ================= -->
+
+<div class="glass" data-aos="fade-left">
+
+<h2>Connect With Us</h2>
+
+<div class="contact-card">
+
+<h3>Option 1</h3>
+
+<p>📞 +91 9800772177</p>
+
+<div class="contact-buttons">
+
+<a href="tel:+919800772177" class="call-btn">
+
+<i class="fas fa-phone"></i>
+
+Call Now
+
+</a>
+
+<a href="https://wa.me/919800772177"
+
+class="wa-btn"
+
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="contact-card">
+
+<h3>Option 2</h3>
+
+<p>📞 +91 7501230307</p>
+
+<div class="contact-buttons">
+
+<a href="tel:+917501230307" class="call-btn">
+
+<i class="fas fa-phone"></i>
+
+Call Now
+
+</a>
+
+<a href="https://wa.me/917501230307"
+
+class="wa-btn"
+
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= GOOGLE MAP ================= -->
+
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+
+href="https://wa.me/919800772177?text=Hello%20Haripal%20Cable%20TV%20Network%2C%20I%20need%20information%20about%20a%20new%20Broadband%20or%20Cable%20TV%20connection."
+
+class="whatsapp"
+
+target="_blank"
+
+title="Chat on WhatsApp">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+<!-- ================= FEEDBACK POPUP ================= -->
+
+<section class="visit-office" data-aos="zoom-in">
+
+    <div class="location-circle">
+        <i class="fas fa-location-dot"></i>
+    </div>
+
+    <h2>Visit Our Office</h2>
+
+    <p>
+        Haripal Cable TV Network<br>
+        Near Indian Bank,<br>
+        Haripal Station Bazar,<br>
+        Hooghly, West Bengal - 712405
+    </p>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Indian+Bank+Haripal+Station+Bazar+Haripal+Hooghly"
+       target="_blank"
+       class="map-button">
+
+        <i class="fas fa-map-marked-alt"></i>
+        Open in Google Maps
+
+    </a>
+
+</section>
+<!-- ================= PREMIUM FOOTER ================= -->
+
+<footer data-aos="fade-up">
+
+<div class="footer-container">
+
+    <!-- Company -->
+
+    <div class="footer-box">
+
+        <h3 class="company-name">
+Haripal Cable TV Network
+</h3>
+
+            <p style="font-size:18px;line-height:2;">
+
+            Near Indian Bank
+
+            <br>
+
+                Haripal Station Bazar
+
+            <br>
+
+                Haripal, Hooghly
+
+            <br>
+
+                West Bengal - 712405
+
+            </p>
+
+    </div>
+
+    <!-- Quick Links -->
+
+    <div class="footer-box">
+
+        <h4>Quick Links</h4>
+
+        <a href="index.html">Home</a>
+        <a href="services.html">
+
+<i class="fas fa-angle-right"></i>
+
+Services
+
+</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="team.html">Our Team</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <!-- Contact -->
+
+    <div class="footer-box">
+
+        <h4>Contact</h4>
+
+        <p><i class="fas fa-phone"></i> 9800772177</p>
+
+        <p><i class="fas fa-phone"></i> 7501230307</p>
+
+        <p><i class="fas fa-envelope"></i> haripalcabletvnetwork@gmail.com</p>
+
+    </div>
+
+    <!-- Office -->
+
+    <div class="footer-box">
+
+        <h4>Office</h4>
+
+        <p>
+        <i class="fas fa-location-dot"></i><br>
+
+        Near Indian Bank<br>
+
+        Haripal Station Bazar<br>
+
+        Haripal, Hooghly<br>
+
+        West Bengal - 712405
+        </p>
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="footer-bottom">
+
+© 2026 Haripal Cable TV Network. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+
+<!-- ================= MOBILE MENU ================= -->
+
+<script>
+
+const menu=document.querySelector(".menu-toggle");
+
+const nav=document.querySelector(".nav-links");
+
+menu.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+});
+
+</script>
+
+<!-- ================= AOS ================= -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1000,
+once:true,
+offset:120
+});
+</script>
+
+
+</body>
+
+</html>

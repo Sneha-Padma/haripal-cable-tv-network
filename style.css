@@ -1,0 +1,711 @@
+/* ==========================================
+   Haripal Cable TV Network
+   Premium Business Website
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#ffffff;
+    color:#1e293b;
+    overflow-x:hidden;
+}
+
+/*==========================
+        NAVBAR
+==========================*/
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    background:#ffffff;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    z-index:1000;
+
+}
+
+.navbar{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:18px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#111827;
+
+}
+
+.logo img{
+
+    width:60px;
+
+    margin-right:15px;
+
+}
+
+.logo h2{
+
+    font-size:24px;
+
+    color:#2563EB;
+
+}
+
+.logo span{
+
+    font-size:13px;
+
+    color:#64748B;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#334155;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:3px;
+
+    left:0;
+
+    bottom:-8px;
+
+    background:#2563EB;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-links a:hover{
+
+    color:#2563EB;
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+@media(max-width:900px){
+
+.nav-links{
+
+    position:fixed;
+
+    top:90px;
+
+    right:-100%;
+
+    width:260px;
+
+    height:100vh;
+
+    background:#fff;
+
+    flex-direction:column;
+
+    padding:40px;
+
+    transition:.4s;
+
+    box-shadow:-10px 0 20px rgba(0,0,0,.08);
+
+}
+
+.nav-links.active{
+
+    right:0;
+
+}
+
+.menu-toggle{
+
+    display:block;
+
+}
+
+}
+
+/* ===== HERO ===== */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 80px;
+    background:linear-gradient(135deg,#2563eb,#0f172a);
+    position:relative;
+    overflow:hidden;
+    color:#fff;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    top:-250px;
+    right:-200px;
+    animation:rotateCircle 20s linear infinite;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(255,255,255,.04);
+    bottom:-180px;
+    left:-150px;
+    animation:rotateCircle 14s linear infinite reverse;
+}
+
+.hero-content{
+    max-width:850px;
+    position:relative;
+    z-index:5;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:56px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    color:#e2e8f0;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+@keyframes rotateCircle{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:2px solid #1877f2;
+    color:#1877f2;
+}
+
+.btn-secondary:hover{
+    background:#1877f2;
+    color:white;
+}
+/* ===== FOOTER ===== */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.logo h2{
+    font-size:22px;
+}
+
+.logo span{
+    font-size:12px;
+}
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.btn-primary,
+.btn-secondary{
+    width:100%;
+}
+
+}
+/*==========================
+        FEEDS
+==========================*/
+
+.feeds{
+    padding:100px 20px;
+    background:#f8fafc;
+}
+
+.feeds h2{
+    text-align:center;
+    font-size:42px;
+    color:#0f172a;
+    margin-bottom:50px;
+}
+
+.feed-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.feed-card{
+    background:#ffffff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.feed-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(37,99,235,.15);
+}
+
+.feed-card h3{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.feed-card p{
+    color:#64748b;
+    line-height:1.8;
+}
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+section{
+    width:100%;
+    overflow:hidden;
+}
+
+.container{
+    width:min(1300px,92%);
+    margin:auto;
+}
+/*=========================================
+PREMIUM RESPONSIVE DESIGN
+Desktop • Laptop • Tablet • Mobile
+=========================================*/
+
+/* 1400px+ */
+@media (min-width:1400px){
+
+.hero-content{
+    max-width:950px;
+}
+
+.hero h1{
+    font-size:64px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+}
+
+
+/* Laptop */
+
+@media (max-width:1200px){
+
+.navbar{
+    padding:18px 25px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.feed-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+/* Tablet */
+
+@media (max-width:992px){
+
+.logo img{
+    width:55px;
+}
+
+.logo h2{
+    font-size:20px;
+}
+
+.nav-links{
+
+    position:fixed;
+
+    top:90px;
+
+    right:-100%;
+
+    width:280px;
+
+    height:100vh;
+
+    background:#fff;
+
+    flex-direction:column;
+
+    padding:45px 35px;
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.12);
+
+}
+
+.nav-links.active{
+    right:0;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.hero{
+
+    padding:160px 20px 90px;
+
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.feed-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.navbar{
+    padding:16px 18px;
+}
+
+.logo img{
+    width:48px;
+}
+
+.logo h2{
+    font-size:18px;
+}
+
+.logo span{
+    font-size:11px;
+}
+
+.hero{
+    min-height:90vh;
+}
+
+.hero h1{
+    font-size:34px;
+    line-height:1.3;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.btn-primary,
+.btn-secondary{
+    width:100%;
+}
+
+.feed-container{
+    grid-template-columns:1fr;
+}
+
+.feeds h2{
+    font-size:32px;
+}
+
+.feed-card{
+    padding:28px;
+}
+
+}
+
+
+/* Small Phones */
+
+@media (max-width:480px){
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px 80px;
+
+    background:
+    linear-gradient(135deg,#2563eb,#0f172a);
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+top:-250px;
+
+right:-200px;
+
+animation:rotateCircle 20s linear infinite;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.04);
+
+bottom:-180px;
+
+left:-150px;
+
+animation:rotateCircle 14s linear infinite reverse;
+
+}
+
+@keyframes rotateCircle{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:5;
+
+animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero h1{
+    font-size:28px;
+}
+
+.hero p{
+    font-size:15px;
+}
+
+.logo span{
+    display:none;
+}
+
+.feed-card{
+    padding:22px;
+}
+
+footer{
+    padding:20px;
+}
+
+}
