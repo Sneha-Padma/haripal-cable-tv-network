@@ -515,7 +515,487 @@ Desktop • Laptop • Tablet • Mobile
 }
 
 }
+/* ==========================================
+   CINEMATIC TECHNOLOGY EFFECT
+========================================== */
 
+.hero{
+    isolation:isolate;
+}
+
+/* Technology orbit container */
+
+.tech-orbit{
+
+    position:absolute;
+
+    width:760px;
+    height:760px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:1;
+
+    pointer-events:none;
+
+    opacity:.85;
+
+}
+
+
+/* ------------------------------------------
+   GLOWING ORBIT RINGS
+------------------------------------------ */
+
+.orbit-ring{
+
+    position:absolute;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:50%;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:
+        0 0 25px rgba(37,99,235,.12),
+        inset 0 0 25px rgba(0,212,255,.05);
+
+}
+
+
+.ring-one{
+
+    width:600px;
+    height:600px;
+
+    animation:
+        orbitRotate 25s linear infinite;
+
+}
+
+
+.ring-two{
+
+    width:430px;
+    height:430px;
+
+    border-color:rgba(0,212,255,.12);
+
+    animation:
+        orbitRotateReverse 18s linear infinite;
+
+}
+
+
+/* ------------------------------------------
+   TECHNOLOGY ICONS
+------------------------------------------ */
+
+.tech-icon{
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:rgba(255,255,255,.65);
+
+    border:1px solid rgba(255,255,255,.13);
+
+    background:rgba(255,255,255,.035);
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+        0 0 30px rgba(37,99,235,.12),
+        inset 0 0 25px rgba(255,255,255,.025);
+
+    animation:cinematicFloat 5s ease-in-out infinite;
+
+}
+
+
+.tech-icon i{
+
+    font-size:27px;
+
+    margin-bottom:7px;
+
+    color:#7dd3fc;
+
+    filter:
+        drop-shadow(0 0 8px rgba(0,212,255,.65));
+
+}
+
+
+.tech-icon span{
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    color:#cbd5e1;
+
+}
+
+
+/* ------------------------------------------
+   INDIVIDUAL POSITIONS
+------------------------------------------ */
+
+.mobile-icon{
+
+    top:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation-delay:0s;
+
+}
+
+
+.router-icon{
+
+    right:35px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    animation-delay:1s;
+
+}
+
+
+.broadband-icon{
+
+    right:120px;
+    bottom:55px;
+
+    animation-delay:2s;
+
+}
+
+
+.ott-icon{
+
+    left:120px;
+    bottom:55px;
+
+    animation-delay:3s;
+
+}
+
+
+.iptv-icon{
+
+    left:35px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    animation-delay:4s;
+
+}
+
+
+/* ------------------------------------------
+   CINEMATIC FLOAT
+------------------------------------------ */
+
+@keyframes cinematicFloat{
+
+    0%,100%{
+
+        transform:translateY(0)
+                   scale(1);
+
+        opacity:.55;
+
+    }
+
+    50%{
+
+        transform:translateY(-12px)
+                   scale(1.04);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ------------------------------------------
+   ORBIT ROTATION
+------------------------------------------ */
+
+@keyframes orbitRotate{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes orbitRotateReverse{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
+
+}
+
+
+/* ==========================================
+   CINEMATIC COMPANY NAME
+========================================== */
+
+.hero-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:22px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    color:#bfdbfe;
+
+    transition:
+        letter-spacing .6s ease,
+        color .6s ease,
+        text-shadow .6s ease;
+
+}
+
+
+.hero-brand span:not(.brand-line){
+
+    cursor:pointer;
+
+    position:relative;
+
+}
+
+
+.hero-brand span:not(.brand-line)::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00d4ff,
+            transparent
+        );
+
+    transition:width .6s ease;
+
+}
+
+
+.hero-brand:hover{
+
+    letter-spacing:8px;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 0 8px rgba(0,212,255,.8),
+        0 0 25px rgba(37,99,235,.65),
+        0 0 50px rgba(0,212,255,.35);
+
+}
+
+
+.hero-brand:hover span:not(.brand-line)::after{
+
+    width:100%;
+
+}
+
+
+.brand-line{
+
+    width:45px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00d4ff
+        );
+
+    transition:.6s ease;
+
+}
+
+
+.hero-brand:hover .brand-line{
+
+    width:75px;
+
+    box-shadow:
+        0 0 12px #00d4ff;
+
+}
+
+
+/* ==========================================
+   HERO TITLE ENHANCEMENT
+========================================== */
+
+.hero h1 span{
+
+    display:inline-block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #7dd3fc,
+            #ffffff
+        );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:textShimmer 5s linear infinite;
+
+}
+
+
+@keyframes textShimmer{
+
+    to{
+
+        background-position:
+            200% center;
+
+    }
+
+}
+
+
+/* ==========================================
+   CINEMATIC BUTTON GLOW
+========================================== */
+
+.btn-primary{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.btn-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:80%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.45),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    transition:.7s;
+
+}
+
+
+.btn-primary:hover::before{
+
+    left:140%;
+
+}
+
+
+.btn-primary:hover{
+
+    box-shadow:
+        0 0 15px rgba(37,99,235,.6),
+        0 0 35px rgba(37,99,235,.35);
+
+}
 
 /* Mobile */
 
@@ -601,6 +1081,21 @@ Desktop • Laptop • Tablet • Mobile
 
     overflow:hidden;
 
+}
+.hero .cinematic-vignette {
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(2,8,23,.35) 70%,
+            rgba(2,8,23,.75) 100%
+        );
+
+    z-index:2;
 }
 .hero::before{
 
@@ -707,5 +1202,197 @@ transform:translateY(0);
 footer{
     padding:20px;
 }
+
+}
+/* ==========================================
+   TECHNOLOGY ORBIT - TABLET
+========================================== */
+
+@media(max-width:992px){
+
+    .tech-orbit{
+
+        width:600px;
+        height:600px;
+
+        opacity:.55;
+
+    }
+
+    .ring-one{
+
+        width:470px;
+        height:470px;
+
+    }
+
+    .ring-two{
+
+        width:340px;
+        height:340px;
+
+    }
+
+    .tech-icon{
+
+        width:75px;
+        height:75px;
+
+    }
+
+    .tech-icon i{
+
+        font-size:21px;
+
+    }
+
+    .tech-icon span{
+
+        font-size:9px;
+
+    }
+
+    .mobile-icon{
+
+        top:35px;
+
+    }
+
+    .router-icon{
+
+        right:20px;
+
+    }
+
+    .broadband-icon{
+
+        right:75px;
+        bottom:40px;
+
+    }
+
+    .ott-icon{
+
+        left:75px;
+        bottom:40px;
+
+    }
+
+    .iptv-icon{
+
+        left:20px;
+
+    }
+
+}
+
+
+/* ==========================================
+   TECHNOLOGY ORBIT - MOBILE
+========================================== */
+
+@media(max-width:600px){
+
+    .tech-orbit{
+
+        width:420px;
+        height:420px;
+
+        opacity:.28;
+
+    }
+
+    .ring-one{
+
+        width:330px;
+        height:330px;
+
+    }
+
+    .ring-two{
+
+        width:240px;
+        height:240px;
+
+    }
+
+    .tech-icon{
+
+        width:60px;
+        height:60px;
+
+        background:rgba(255,255,255,.025);
+
+    }
+
+    .tech-icon i{
+
+        font-size:17px;
+
+        margin-bottom:2px;
+
+    }
+
+    .tech-icon span{
+
+        font-size:7px;
+
+        letter-spacing:.5px;
+
+    }
+
+    .mobile-icon{
+
+        top:20px;
+
+    }
+
+    .router-icon{
+
+        right:8px;
+
+    }
+
+    .broadband-icon{
+
+        right:45px;
+        bottom:25px;
+
+    }
+
+    .ott-icon{
+
+        left:45px;
+        bottom:25px;
+
+    }
+
+    .iptv-icon{
+
+        left:8px;
+
+    }
+
+    .hero-brand{
+
+        font-size:9px;
+
+        letter-spacing:3px;
+
+        gap:8px;
+
+    }
+
+    .brand-line{
+
+        width:25px;
+
+    }
+
+    .hero-brand:hover{
+
+        letter-spacing:4px;
+
+    }
 
 }
