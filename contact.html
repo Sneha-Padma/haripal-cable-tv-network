@@ -8,1089 +8,1595 @@
 
 <title>Contact Us | Haripal Cable TV Network</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<!-- AOS Animation -->
 
 <link
 href="https://unpkg.com/aos@2.3.4/dist/aos.css"
 rel="stylesheet">
 
 
-
 <style>
-/*==========================
-CONTACT OPTIONS
-==========================*/
-.contact-card{
-padding:25px;
-background:#f8fbff;
-border:1px solid #e7eefb;
-border-radius:18px;
-margin-bottom:20px;
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-.contact-card:last-child{
-margin-bottom:0;
+html{
+    scroll-behavior:smooth;
 }
 
-.contact-card p{
-font-size:17px;
-color:#475569;
+body{
+    background:
+    linear-gradient(
+        135deg,
+        #081321,
+        #0d1b2a,
+        #102542
+    );
+
+    background-size:300% 300%;
+
+    animation:bgMove 15s ease infinite;
+
+    overflow-x:hidden;
+
+    color:#fff;
 }
 
-.contact-card h3{
+@keyframes bgMove{
 
-margin-bottom:10px;
+    0%{
+        background-position:0% 50%;
+    }
 
-color:#2563eb;
+    50%{
+        background-position:100% 50%;
+    }
 
-}
-
-.contact-card p{
-
-font-size:18px;
-
-margin-bottom:18px;
-
-}
-
-.contact-buttons{
-display:flex;
-gap:18px;
-margin-top:18px;
-}
-.call-btn,
-
-.wa-btn{
-
-flex:1;
-
-text-align:center;
-
-padding:14px;
-
-border-radius:12px;
-
-text-decoration:none;
-
-font-weight:600;
-
-color:#fff;
-
-transition:.35s;
-
-}
-
-.call-btn{
-
-background:#2563eb;
-
-}
-
-.call-btn:hover{
-
-background:#1d4ed8;
-
-transform:translateY(-4px);
-
-}
-
-.wa-btn{
-
-background:#25D366;
-
-}
-
-.wa-btn:hover{
-
-background:#18b954;
-
-transform:translateY(-4px);
-
-}
-
-hr{
-
-margin:30px 0;
-
-border:none;
-
-height:1px;
-
-background:#ddd;
+    100%{
+        background-position:0% 50%;
+    }
 
 }
 
 
-/*==========================
-NAVBAR
-==========================*/
+/* =====================================================
+   NAVBAR
+===================================================== */
 
 header{
 
-position:fixed;
+    position:fixed;
 
-top:0;
+    top:0;
+    left:0;
 
-width:100%;
+    width:100%;
 
-background:#ffffff;
+    z-index:9999;
 
-box-shadow:0 2px 15px rgba(0,0,0,.08);
+    background:rgba(255,255,255,.96);
 
-z-index:999;
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.12);
 
 }
 
 .navbar{
 
-max-width:1300px;
+    max-width:1350px;
 
-margin:auto;
+    margin:auto;
 
-padding:18px 40px;
+    padding:15px 40px;
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-align-items:center;
-
-}
-
-.logo{
-
-display:flex;
-
-align-items:center;
-
-text-decoration:none;
+    align-items:center;
 
 }
 
-.logo img{
 
-width:60px;
+/* =====================================================
+   CINEMATIC BRAND
+===================================================== */
 
-margin-right:15px;
+.brand-text{
+
+    text-decoration:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.brand-main{
+
+    font-size:21px;
+
+    font-weight:800;
+
+    letter-spacing:1.2px;
+
+    color:#2563eb;
+
+    position:relative;
+
+    transition:.45s ease;
+
+    text-shadow:0 0 0 transparent;
 
 }
 
-.logo h2{
 
-font-size:24px;
+/* Cinematic Light Sweep */
 
-color:#2563eb;
+.brand-main::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,229,255,.8),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:.7s ease;
 
 }
 
-.logo span{
+.brand-text:hover .brand-main::after{
 
-font-size:13px;
-
-color:#64748b;
+    left:140%;
 
 }
+
+.brand-text:hover .brand-main{
+
+    color:#0f62fe;
+
+    letter-spacing:1.8px;
+
+    transform:translateY(-1px);
+
+    text-shadow:
+    0 0 8px rgba(37,99,235,.35),
+    0 0 20px rgba(0,229,255,.20);
+
+}
+
+.brand-tagline{
+
+    font-size:9px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    color:#64748b;
+
+    transition:.4s ease;
+
+}
+
+.brand-text:hover .brand-tagline{
+
+    color:#0891b2;
+
+    letter-spacing:2.5px;
+
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
 
 .nav-links{
 
-display:flex;
+    display:flex;
 
-gap:35px;
+    gap:28px;
 
-list-style:none;
+    list-style:none;
 
 }
 
 .nav-links a{
 
-text-decoration:none;
+    text-decoration:none;
 
-color:#334155;
+    color:#334155;
 
-font-weight:500;
+    font-weight:600;
 
-transition:.3s;
+    position:relative;
+
+    transition:.35s;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:#2563eb;
+
+    transition:.35s;
 
 }
 
-.nav-links a:hover{
+.nav-links a:hover,
+.nav-links a.active{
 
-color:#2563eb;
+    color:#2563eb;
 
 }
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
 .menu-toggle{
 
-display:none;
+    display:none;
 
-font-size:28px;
+    font-size:28px;
 
-cursor:pointer;
+    cursor:pointer;
 
-}
+    color:#2563eb;
 
-@media(max-width:900px){
-
-.nav-links{
-
-position:fixed;
-
-top:90px;
-
-right:-100%;
-
-width:250px;
-
-height:100vh;
-
-background:white;
-
-display:flex;
-
-flex-direction:column;
-
-padding:40px;
-
-transition:.4s;
+    transition:.3s;
 
 }
 
-.nav-links.active{
+.menu-toggle:hover{
 
-right:0;
-
-}
-
-.menu-toggle{
-
-display:block;
+    transform:scale(1.1);
 
 }
 
-}
 
-/*==========================
-HERO
-==========================*/
+/* =====================================================
+   HERO
+===================================================== */
 
 .contact-hero{
 
-position:relative;
+    position:relative;
 
-overflow:hidden;
+    overflow:hidden;
 
-padding:190px 20px 140px;
+    min-height:620px;
 
-text-align:center;
+    padding:180px 20px 120px;
 
-background:linear-gradient(135deg,#2563eb,#0f172a);
+    display:flex;
 
-color:white;
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at 20% 30%,
+        rgba(0,229,255,.16),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 80% 70%,
+        rgba(37,99,235,.20),
+        transparent 35%
+    );
 
 }
+
+
+/* HERO GLOW */
+
 .contact-hero::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:500px;
+    width:650px;
 
-height:500px;
+    height:650px;
 
-background:rgba(255,255,255,.05);
+    background:#2563eb25;
 
-border-radius:50%;
+    filter:blur(110px);
 
-top:-220px;
+    border-radius:50%;
 
-right:-150px;
+    top:-300px;
 
-animation:heroRotate 18s linear infinite;
+    left:-250px;
+
+    animation:heroFloat 8s ease-in-out infinite alternate;
 
 }
 
 .contact-hero::after{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:350px;
+    width:550px;
 
-height:350px;
+    height:550px;
 
-background:rgba(255,255,255,.05);
+    background:#00e5ff1c;
 
-border-radius:50%;
+    filter:blur(110px);
 
-bottom:-160px;
+    border-radius:50%;
 
-left:-120px;
+    bottom:-280px;
 
-animation:heroRotate 12s linear infinite reverse;
+    right:-200px;
 
-}
-
-@keyframes heroRotate{
-
-from{
-
-transform:rotate(0deg);
+    animation:heroFloat 7s ease-in-out infinite alternate-reverse;
 
 }
 
-to{
+@keyframes heroFloat{
 
-transform:rotate(360deg);
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(60px,40px);
+
+    }
 
 }
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
 
 }
 
 .contact-hero h1{
 
-font-size:60px;
+    font-size:60px;
 
-margin-bottom:20px;
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.contact-hero h1 span{
+
+    color:#38bdf8;
 
 }
 
 .contact-hero p{
 
-font-size:20px;
+    max-width:800px;
 
-max-width:750px;
-
-margin:auto;
-
-line-height:1.8;
-
-}
-
-/*==========================
-CONTACT SECTION
-==========================*/
-
-.contact-section{
-max: width 1350px;
-margin:80px auto;
-padding:0 20px;
-
-display:grid;
-
-grid-template-columns:1.4fr 1fr;
-
-gap:45px;
-align-items:stretch;
-}
-
-/*==========================
-GLASS CARD
-==========================*/
-
-.glass{
-background:#fff;
-border-radius:25px;
-padding:40px;
-box-shadow:0 20px 50px rgba(0,0,0,.08);
-
-display:flex;
-flex-direction:column;
-justify-content:flex-start;
-
-min-height:620px;
-}
-.glass::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:-100%;
-
-width:100%;
-
-height:100%;
-
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.45),
-transparent
-);
-
-transition:.7s;
-
-}
-
-.glass:hover{
-
-transform:translateY(-12px);
-
-box-shadow:0 30px 70px rgba(37,99,235,.18);
-
-}
-
-.glass:hover::before{
-
-left:100%;
-
-}
-.glass h2{
-
-margin-bottom:30px;
-
-color:#0f172a;
-
-}
-
-/*==========================
-CONTACT INFO
-==========================*/
-
-.info{
-display:flex;
-align-items:flex-start;
-gap:20px;
-padding:20px;
-margin-bottom:20px;
-border-radius:16px;
-transition:.3s;
-background:#fff;
-}
-
-.info:hover{
-background:#f5f9ff;
-transform:translateX(6px);
-}
-
-.info i{
-width:55px;
-height:55px;
-background:#eaf2ff;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:24px;
-color:#2563eb;
-flex-shrink:0;
-}
-
-.info div{
-flex:1;
-}
-
-.info h3{
-margin:0 0 8px;
-font-size:20px;
-color:#111827;
-}
-
-.info p{
-margin:0;
-font-size:16px;
-line-height:1.8;
-color:#475569;
-}
-
-.info a{
-display:inline;
-color:#2563eb;
-font-weight:600;
-text-decoration:none;
-}
-
-.info a:hover{
-text-decoration:underline;
-}
-
-/*==========================
-FORM
-==========================*/
-
-input,
-
-textarea{
-
-width:100%;
-
-padding:16px;
-
-margin-bottom:20px;
-
-border-radius:12px;
-
-border:none;
-
-outline:none;
-
-background:white;
-
-font-size:16px;
-
-transition:.3s;
-
-}
-
-input:focus,
-
-textarea:focus{
-
-box-shadow:0 0 12px rgba(37,99,235,.3);
-
-}
-
-textarea{
-
-height:170px;
-
-resize:none;
-
-}
-
-button{
-
-width:100%;
-
-padding:16px;
-
-background:#2563eb;
-
-border:none;
-
-border-radius:12px;
-
-color:white;
-
-font-size:17px;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-button:hover{
-
-background:#1d4ed8;
-
-transform:translateY(-3px);
-
-}
-
-/*==========================
-MAP
-==========================*/
-.visit-office{
-
-
-max-width:900px;
-width:90%;
-margin:100px auto;
-padding:70px;
-
-background:#fff;
-border-radius:35px;
-box-shadow:0 25px 80px rgba(0,0,0,.08);
-
-position:relative;
-overflow:hidden;
-text-align:center;
-
-}
-.visit-office::before{
-
-content:"";
-
-position:absolute;
-
-width:350px;
-
-height:350px;
-
-background:rgba(37,99,235,.08);
-
-border-radius:50%;
-
-top:-120px;
-
-left:-120px;
-
-animation:rotateCircle 18s linear infinite;
-
-}
-
-.visit-office::after{
-
-content:"";
-
-position:absolute;
-
-width:220px;
-
-height:220px;
-
-background:rgba(37,99,235,.05);
-
-border-radius:50%;
-
-bottom:-80px;
-
-right:-80px;
-
-animation:rotateCircle 14s linear infinite reverse;
-
-}
-
-@keyframes rotateCircle{
-
-from{
-
-transform:rotate(0deg);
-
-}
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-.location-circle{
-
-width:140px;
-
-height:140px;
-
-margin:auto;
-
-border-radius:50%;
-
-background:linear-gradient(135deg,#2563eb,#0f172a);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
-font-size:60px;
-
-box-shadow:0 20px 45px rgba(37,99,235,.35);
-
-animation:floatIcon 3s ease-in-out infinite;
-
-position:relative;
-
-z-index:2;
-
-transition:.4s;
-
-}
-
-.location-circle:hover{
-
-transform:scale(1.08);
-
-box-shadow:0 25px 60px rgba(37,99,235,.5);
-
-}
-
-.visit-office h2{
-
-    margin-top:35px;
-
-    font-size:38px;
-
-    color:#0f172a;
-
-}
-
-.visit-office p{
-
-    margin:25px 0;
+    margin:auto;
 
     font-size:18px;
 
     line-height:1.9;
 
-    color:#555;
+    color:#dbeafe;
+
+}
+
+
+/* =====================================================
+   SECTION COMMON
+===================================================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.section-subtitle{
+
+    max-width:850px;
+
+    margin:0 auto 55px;
+
+    text-align:center;
+
+    color:#cfe3ff;
+
+    line-height:1.9;
+
+}
+
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+.contact-section{
+
+    max-width:1350px;
+
+    margin:0 auto;
+
+    padding:90px 20px;
+
+    display:grid;
+
+    grid-template-columns:1.2fr 1fr;
+
+    gap:40px;
+
+}
+
+
+/* =====================================================
+   GLASS CARD
+===================================================== */
+
+.glass{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.09);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
+
+    transition:.5s ease;
+
+}
+
+.glass::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:80%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.10),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:.8s ease;
+
+    pointer-events:none;
+
+}
+
+.glass:hover::before{
+
+    left:140%;
+
+}
+
+.glass:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(0,229,255,.35);
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.35),
+    0 0 30px rgba(0,229,255,.10);
+
+}
+
+.glass h2{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:30px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =====================================================
+   CONTACT INFORMATION
+===================================================== */
+
+.info{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:20px;
+
+    margin-bottom:15px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.07);
+
+    transition:.35s;
+
+}
+
+.info:hover{
+
+    background:rgba(255,255,255,.10);
+
+    transform:translateX(6px);
+
+    border-color:rgba(0,229,255,.25);
+
+}
+
+.info i{
+
+    width:55px;
+
+    height:55px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #00b4ff
+    );
+
+    color:#fff;
+
+    font-size:21px;
+
+    box-shadow:
+    0 0 20px rgba(37,99,235,.25);
+
+}
+
+.info h3{
+
+    margin-bottom:7px;
+
+    font-size:18px;
+
+    color:#fff;
+
+}
+
+.info p{
+
+    color:#cfe3ff;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+.info a{
+
+    color:#7dd3fc;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.info a:hover{
+
+    color:#38bdf8;
+
+}
+
+
+/* =====================================================
+   CONNECT CARDS
+===================================================== */
+
+.contact-card{
+
+    position:relative;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    transition:.4s;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#00e5ff;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25),
+    0 0 25px rgba(0,229,255,.12);
+
+}
+
+.contact-card h3{
+
+    color:#7dd3fc;
+
+    margin-bottom:10px;
+
+}
+
+.contact-card p{
+
+    color:#e2efff;
+
+    font-size:17px;
+
+    margin-bottom:18px;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.contact-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.call-btn,
+.wa-btn{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:13px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.call-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #00a8ff
+    );
+
+}
+
+.wa-btn{
+
+    background:#25d366;
+
+}
+
+.call-btn:hover,
+.wa-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+
+}
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(255,255,255,.12);
+
+    margin:25px 0;
+
+}
+
+
+/* =====================================================
+   VISIT OFFICE
+===================================================== */
+
+.visit-office{
+
+    position:relative;
+
+    max-width:1100px;
+
+    width:calc(100% - 40px);
+
+    margin:40px auto 100px;
+
+    padding:75px 40px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(37,99,235,.16),
+        rgba(0,229,255,.06)
+    );
+
+    border:1px solid rgba(125,211,252,.20);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.30);
+
+}
+
+.visit-office::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:#2563eb22;
+
+    filter:blur(90px);
+
+    top:-150px;
+
+    left:-150px;
+
+}
+
+.visit-office::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:#00e5ff18;
+
+    filter:blur(90px);
+
+    bottom:-140px;
+
+    right:-140px;
+
+}
+
+.location-circle{
+
+    position:relative;
+
+    z-index:2;
+
+    width:140px;
+
+    height:140px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #00b4ff
+    );
+
+    color:#fff;
+
+    font-size:55px;
+
+    box-shadow:
+    0 0 30px rgba(0,229,255,.25),
+    0 20px 45px rgba(37,99,235,.35);
+
+    animation:floatIcon 3s ease-in-out infinite;
+
+}
+
+@keyframes floatIcon{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+.visit-office h2{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:35px;
+
+    font-size:38px;
+
+}
+
+.visit-office p{
+
+    position:relative;
+
+    z-index:2;
+
+    margin:22px auto 30px;
+
+    max-width:700px;
+
+    color:#cfe3ff;
+
+    font-size:17px;
+
+    line-height:1.9;
 
 }
 
 .map-button{
 
-display:inline-flex;
+    position:relative;
 
-align-items:center;
+    z-index:2;
 
-gap:12px;
+    display:inline-flex;
 
-padding:18px 38px;
+    align-items:center;
 
-background:#2563eb;
+    justify-content:center;
 
-color:white;
+    gap:10px;
 
-text-decoration:none;
+    padding:16px 30px;
 
-border-radius:50px;
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #00a8ff
+    );
 
-font-weight:600;
+    color:#fff;
 
-font-size:16px;
+    text-decoration:none;
 
-transition:.4s;
+    border-radius:50px;
 
-box-shadow:0 12px 30px rgba(37,99,235,.25);
+    font-weight:600;
+
+    transition:.4s;
+
+    box-shadow:
+    0 10px 30px rgba(37,99,235,.30);
 
 }
 
 .map-button:hover{
 
-background:#1d4ed8;
+    transform:translateY(-5px);
 
-transform:translateY(-6px);
-
-box-shadow:0 20px 40px rgba(37,99,235,.4);
-
-}
-
-
-@keyframes floatIcon{
-
-0%,100%{
-
-transform:translateY(0);
+    box-shadow:
+    0 18px 40px rgba(37,99,235,.40),
+    0 0 25px rgba(0,229,255,.20);
 
 }
 
-50%{
 
-transform:translateY(-12px);
-
-}
-
-}
-
-/*==========================
-WHATSAPP
-==========================*/
+/* =====================================================
+   FLOATING WHATSAPP
+===================================================== */
 
 .whatsapp{
 
-position:fixed;
+    position:fixed;
 
-bottom:25px;
+    right:25px;
 
-right:25px;
+    bottom:25px;
 
-width:70px;
+    z-index:9998;
 
-height:70px;
+    width:65px;
 
-background:#25d366;
+    height:65px;
 
-border-radius:50%;
+    display:flex;
 
-display:flex;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    border-radius:50%;
 
-text-decoration:none;
+    background:#25d366;
 
-font-size:38px;
+    color:#fff;
 
-color:white;
+    text-decoration:none;
 
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+    font-size:34px;
 
-transition:.3s;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.30);
 
-z-index:999;
+    transition:.35s;
+
+    animation:whatsappPulse 2.5s infinite;
 
 }
 
 .whatsapp:hover{
 
-transform:scale(1.12);
+    transform:scale(1.12);
 
 }
-.company-name{
 
-color:#3b82f6;
+@keyframes whatsappPulse{
 
-font-size:28px;
+    0%{
 
-margin-bottom:18px;
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,.45);
 
-white-space:nowrap;
+    }
+
+    70%{
+
+        box-shadow:
+        0 0 0 18px rgba(37,211,102,0);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,0);
+
+    }
 
 }
-/*==========================
-PREMIUM FOOTER
-==========================*/
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-width:100%;
-background:#0f172a;
-color:#fff;
-padding:70px 0 25px;
-margin-top:100px;
-border-top:4px solid #2563eb;
+
+    margin-top:80px;
+
+    padding:70px 0 25px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #081321,
+        #050b12
+    );
+
+    border-top:1px solid rgba(0,229,255,.15);
+
 }
 
 .footer-container{
-max-width:1300px;
-margin:auto;
-padding:0 40px;
-display:grid;
-grid-template-columns:2.5fr 1fr 1.3fr 1.7fr;
-gap:60px;
+
+    max-width:1350px;
+
+    margin:auto;
+
+    padding:0 40px;
+
+    display:grid;
+
+    grid-template-columns:
+    2.3fr 1fr 1.3fr 1.5fr;
+
+    gap:50px;
+
 }
+
 .footer-box h3,
 .footer-box h4{
 
-margin-bottom:18px;
+    margin-bottom:18px;
 
-color:white;
+    color:#fff;
+
+}
+
+.company-name{
+
+    color:#38bdf8;
+
+    font-size:27px;
 
 }
 
 .footer-box p{
-color:#cbd5e1;
-line-height:1.8;
-font-size:15px;
+
+    color:#bcd0ea;
+
+    line-height:1.9;
+
+    font-size:14px;
+
 }
+
 .footer-box a{
-display:block;
 
-padding:6px 0;
+    display:block;
 
-font-size:15px;
+    padding:6px 0;
 
-color:#cbd5e1;
+    color:#bcd0ea;
 
-text-decoration:none;
+    text-decoration:none;
 
-transition:.3s;
+    transition:.3s;
+
+    font-size:14px;
 
 }
 
 .footer-box a:hover{
 
-color:#ffffff;
+    color:#38bdf8;
 
-padding-left:8px;
+    padding-left:7px;
+
+}
+
+.footer-box i{
+
+    color:#38bdf8;
+
+    margin-right:5px;
 
 }
 
 footer hr{
 
-margin:40px 0 20px;
+    max-width:1270px;
 
-border:none;
+    margin:45px auto 20px;
 
-height:1px;
-
-background:#334155;
+    background:rgba(255,255,255,.10);
 
 }
 
 .footer-bottom{
 
-text-align:center;
+    text-align:center;
 
-color:#94a3b8;
+    color:#7890ad;
 
-font-size:15px;
-
-}
-
-@media(max-width:900px){
-
-.footer-container{
-grid-template-columns:1fr;
-text-align:center;
-}
+    font-size:13px;
 
 }
 
-.footer-box{
-opacity:0;
-transform:translateY(40px);
-animation:footerFade .8s ease forwards;
-}
 
-.footer-box:nth-child(1){
-animation-delay:.2s;
-}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-.footer-box:nth-child(2){
-animation-delay:.4s;
-}
+@media(max-width:1000px){
 
-.footer-box:nth-child(3){
-animation-delay:.6s;
-}
+    .nav-links{
 
-.footer-box:nth-child(4){
-animation-delay:.8s;
-}
+        gap:18px;
 
-@keyframes footerFade{
+    }
 
-from{
-opacity:0;
-transform:translateY(40px);
-}
+    .contact-section{
 
-to{
-opacity:1;
-transform:translateY(0);
-}
+        grid-template-columns:1fr;
+
+        max-width:750px;
+
+    }
+
+    .footer-container{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
 
 }
 
-/*==========================
-MOBILE
-==========================*/
 
-@media(max-width:900px){
+/* =====================================================
+   TABLET / MOBILE NAV
+===================================================== */
 
-.contact-section{
+@media(max-width:768px){
 
-grid-template-columns:1fr;
+    .navbar{
+
+        padding:13px 20px;
+
+    }
+
+    .brand-main{
+
+        font-size:16px;
+
+        letter-spacing:.8px;
+
+    }
+
+    .brand-tagline{
+
+        font-size:7px;
+
+        letter-spacing:1.2px;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:70px;
+
+        right:-100%;
+
+        width:280px;
+
+        height:calc(100vh - 70px);
+
+        padding:40px 30px;
+
+        flex-direction:column;
+
+        gap:25px;
+
+        background:rgba(255,255,255,.98);
+
+        backdrop-filter:blur(18px);
+
+        box-shadow:
+        -15px 0 40px rgba(0,0,0,.15);
+
+        transition:.45s;
+
+    }
+
+    .nav-links.active{
+
+        right:0;
+
+    }
+
+    .nav-links a{
+
+        font-size:16px;
+
+    }
+
+    .contact-hero{
+
+        min-height:520px;
+
+        padding:140px 20px 80px;
+
+    }
+
+    .contact-hero h1{
+
+        font-size:38px;
+
+    }
+
+    .contact-hero p{
+
+        font-size:15px;
+
+    }
+
+    .contact-section{
+
+        padding:70px 15px;
+
+    }
+
+    .glass{
+
+        padding:28px 20px;
+
+    }
+
+    .glass h2{
+
+        font-size:26px;
+
+    }
+
+    .info{
+
+        padding:17px;
+
+    }
+
+    .contact-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .call-btn,
+    .wa-btn{
+
+        width:100%;
+
+    }
+
+    .visit-office{
+
+        width:calc(100% - 30px);
+
+        padding:50px 20px;
+
+        margin-bottom:70px;
+
+    }
+
+    .location-circle{
+
+        width:115px;
+
+        height:115px;
+
+        font-size:45px;
+
+    }
+
+    .visit-office h2{
+
+        font-size:30px;
+
+    }
+
+    .visit-office p{
+
+        font-size:15px;
+
+    }
+
+    .map-button{
+
+        width:100%;
+
+    }
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+
+        padding:0 25px;
+
+        text-align:center;
+
+        gap:35px;
+
+    }
+
+    footer hr{
+
+        margin-left:25px;
+
+        margin-right:25px;
+
+    }
+
+    .company-name{
+
+        font-size:24px;
+
+    }
+
+    .whatsapp{
+
+        width:58px;
+
+        height:58px;
+
+        right:18px;
+
+        bottom:18px;
+
+        font-size:29px;
+
+    }
 
 }
 
-.contact-hero h1{
 
-font-size:40px;
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:480px){
+
+    .brand-main{
+
+        font-size:14px;
+
+        letter-spacing:.5px;
+
+    }
+
+    .brand-tagline{
+
+        font-size:6px;
+
+        letter-spacing:.8px;
+
+    }
+
+    .contact-hero h1{
+
+        font-size:30px;
+
+    }
+
+    .contact-hero p{
+
+        font-size:14px;
+
+        line-height:1.8;
+
+    }
+
+    .section-title{
+
+        font-size:30px;
+
+    }
+
+    .info{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .info i{
+
+        margin-bottom:5px;
+
+    }
+
+    .visit-office h2{
+
+        font-size:27px;
+
+    }
 
 }
 
-.contact-hero p{
+/* MOBILE */
 
-font-size:17px;
+@media(max-width:768px){
 
-}
+    .theme-toggle {
 
-}
-@media (max-width: 992px){
+        width:44px !important;
+        height:44px !important;
 
-.navbar{
-padding:15px 20px;
-}
+        font-size:22px !important;
 
-.contact-section,
-.footer-container{
-grid-template-columns:1fr;
-}
-
-.contact-hero h1{
-font-size:42px;
-}
-
-.contact-hero p{
-font-size:18px;
-}
-
-.visit-office{
-width:95%;
-padding:50px 30px;
-}
-
-.location-circle{
-width:110px;
-height:110px;
-font-size:48px;
-}
+    }
 
 }
-@media (max-width:768px){
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
 
-.logo h2{
-font-size:18px;
-}
+@media(prefers-reduced-motion:reduce){
 
-.logo span{
-font-size:11px;
-}
+    *{
 
-.contact-hero{
-padding:140px 20px 80px;
-}
+        animation-duration:.01ms !important;
 
-.contact-hero h1{
-font-size:34px;
-}
+        animation-iteration-count:1 !important;
 
-.contact-hero p{
-font-size:16px;
-}
+        scroll-behavior:auto !important;
 
-.contact-buttons{
-flex-direction:column;
-}
-
-.call-btn,
-.wa-btn{
-width:100%;
-}
-
-.glass{
-padding:25px;
-min-height:auto;
-}
-
-.info{
-flex-direction:column;
-align-items:center;
-text-align:center;
-}
-
-.info i{
-margin-bottom:10px;
-}
-
-.visit-office{
-padding:40px 20px;
-}
-
-.visit-office h2{
-font-size:30px;
-}
-
-.map-button{
-width:100%;
-justify-content:center;
-}
-
-.footer-container{
-padding:0 20px;
-}
-
-.company-name{
-white-space:normal;
-}
+    }
 
 }
 
@@ -1098,76 +1604,139 @@ white-space:normal;
 
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <header>
 
 <nav class="navbar">
 
-<a href="index.html" class="logo">
 
-<img src="images/HCN.jpg" alt="Logo">
+<a href="index.html" class="brand-text">
 
-<div>
+<div class="brand-main">
 
-<h2>Haripal Cable TV Network</h2>
+Haripal Cable TV Network
 
-<span>Your Trusted Broadband & Cable Service</span>
+</div>
+
+<div class="brand-tagline">
+
+YOUR TRUSTED BROADBAND & CABLE SERVICE
 
 </div>
 
 </a>
 
+
 <ul class="nav-links">
 
-<li><a href="index.html#feeds">Feeds</a></li>
+<li>
+<a href="index.html#feeds">
+Feeds
+</a>
+</li>
 
-<li><a href="services.html">Services</a></li>
+<li>
+<a href="services.html">
+Services
+</a>
+</li>
 
-<li><a href="gallery.html">Gallery</a></li>
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
 
-<li><a href="team.html">We Are</a></li>
+<li>
+<a href="team.html">
+We Are
+</a>
+</li>
 
-<li><a href="about.html">About</a></li>
+<li>
+<a href="about.html">
+About
+</a>
+</li>
 
-<li><a href="contact.html">Contact</a></li>
+<li>
+<a href="contact.html" class="active">
+Contact
+</a>
+</li>
 
 </ul>
 
+<div class="site-controls">
+    
+
+</div>
 <div class="menu-toggle">
 
 <i class="fas fa-bars"></i>
 
 </div>
 
+
 </nav>
 
 </header>
 
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="contact-hero">
+
+<div class="hero-content">
 
 <h1 data-aos="fade-down">
 
-Contact Haripal Cable TV Network
+Let's <span>Connect</span>
 
 </h1>
 
 <p data-aos="fade-up">
 
 Need a new Broadband or Cable TV connection?
+
 Our team is always ready to help you with installation,
-technical support and customer service.
+technical support, recharge assistance and customer service.
 
 </p>
 
+</div>
+
 </section>
-<!-- ================= CONTACT SECTION ================= -->
+
+
+
+<!-- =====================================================
+     CONTACT SECTION
+===================================================== -->
 
 <section class="contact-section">
 
+
+<!-- CONTACT INFORMATION -->
+
 <div class="glass" data-aos="fade-right">
 
-<h2>Contact Information</h2>
+<h2>
+
+Contact Information
+
+</h2>
+
 
 <div class="info">
 
@@ -1175,15 +1744,21 @@ technical support and customer service.
 
 <div>
 
-<h3>📞 Phone Numbers</h3>
+<h3>
+📞 Phone Numbers
+</h3>
 
 <p>
 
-<a href="tel:+919800772177">+91 9800772177</a>
+<a href="tel:+919800772177">
++91 9800772177
+</a>
 
 <br>
 
-<a href="tel:+917501230307">+91 7501230307</a>
+<a href="tel:+917501230307">
++91 7501230307
+</a>
 
 </p>
 
@@ -1191,13 +1766,17 @@ technical support and customer service.
 
 </div>
 
+
+
 <div class="info">
 
 <i class="fas fa-clock"></i>
 
 <div>
 
-<h3>🕒 Office Hours</h3>
+<h3>
+🕒 Office Hours
+</h3>
 
 <p>
 
@@ -1217,13 +1796,17 @@ Sunday - Saturday
 
 </div>
 
+
+
 <div class="info">
 
 <i class="fas fa-map-marker-alt"></i>
 
 <div>
 
-<h3>📍 Office Address</h3>
+<h3>
+📍 Office Address
+</h3>
 
 <p>
 
@@ -1232,6 +1815,10 @@ Haripal Cable TV Network
 <br>
 
 Near Indian Bank
+
+<br>
+
+Haripal Station Bazar
 
 <br>
 
@@ -1247,17 +1834,25 @@ West Bengal - 712405
 
 </div>
 
+
+
 <div class="info">
 
 <i class="fas fa-envelope"></i>
 
 <div>
 
-<h3>Email</h3>
+<h3>
+Email
+</h3>
 
 <p>
 
+<a href="mailto:haripalcabletvnetwork@gmail.com">
+
 haripalcabletvnetwork@gmail.com
+
+</a>
 
 </p>
 
@@ -1265,23 +1860,41 @@ haripalcabletvnetwork@gmail.com
 
 </div>
 
+
 </div>
 
-<!-- ================= CONTACT OPTIONS ================= -->
+
+
+<!-- =====================================================
+     CONNECT WITH US
+===================================================== -->
 
 <div class="glass" data-aos="fade-left">
 
-<h2>Connect With Us</h2>
+<h2>
+
+Connect With Us
+
+</h2>
+
 
 <div class="contact-card">
 
-<h3>Option 1</h3>
+<h3>
+Option 1
+</h3>
 
-<p>📞 +91 9800772177</p>
+<p>
+📞 +91 9800772177
+</p>
+
 
 <div class="contact-buttons">
 
-<a href="tel:+919800772177" class="call-btn">
+
+<a
+href="tel:+919800772177"
+class="call-btn">
 
 <i class="fas fa-phone"></i>
 
@@ -1289,11 +1902,12 @@ Call Now
 
 </a>
 
-<a href="https://wa.me/919800772177"
 
+<a
+href="https://wa.me/919800772177"
 class="wa-btn"
-
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 <i class="fab fa-whatsapp"></i>
 
@@ -1301,21 +1915,34 @@ WhatsApp
 
 </a>
 
+
 </div>
 
 </div>
+
+
 
 <hr>
 
+
+
 <div class="contact-card">
 
-<h3>Option 2</h3>
+<h3>
+Option 2
+</h3>
 
-<p>📞 +91 7501230307</p>
+<p>
+📞 +91 7501230307
+</p>
+
 
 <div class="contact-buttons">
 
-<a href="tel:+917501230307" class="call-btn">
+
+<a
+href="tel:+917501230307"
+class="call-btn">
 
 <i class="fas fa-phone"></i>
 
@@ -1323,11 +1950,12 @@ Call Now
 
 </a>
 
-<a href="https://wa.me/917501230307"
 
+<a
+href="https://wa.me/917501230307"
 class="wa-btn"
-
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 <i class="fab fa-whatsapp"></i>
 
@@ -1335,17 +1963,85 @@ WhatsApp
 
 </a>
 
-</div>
 
 </div>
 
 </div>
 
-<!-- ================= GOOGLE MAP ================= -->
+
+</div>
+
+
+</section>
 
 
 
-<!-- ================= WHATSAPP ================= -->
+<!-- =====================================================
+     VISIT OFFICE
+===================================================== -->
+
+<section
+class="visit-office"
+data-aos="zoom-in">
+
+
+<div class="location-circle">
+
+<i class="fas fa-location-dot"></i>
+
+</div>
+
+
+<h2>
+
+Visit Our Office
+
+</h2>
+
+
+<p>
+
+Haripal Cable TV Network
+
+<br>
+
+Near Indian Bank
+
+<br>
+
+Haripal Station Bazar
+
+<br>
+
+Haripal, Hooghly
+
+<br>
+
+West Bengal - 712405
+
+</p>
+
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Indian+Bank+Haripal+Station+Bazar+Haripal+Hooghly"
+target="_blank"
+rel="noopener noreferrer"
+class="map-button">
+
+<i class="fas fa-map-marked-alt"></i>
+
+Open in Google Maps
+
+</a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
 
 <a
 
@@ -1355,130 +2051,208 @@ class="whatsapp"
 
 target="_blank"
 
-title="Chat on WhatsApp">
+rel="noopener noreferrer"
+
+title="Chat on WhatsApp"
+aria-label="Chat on WhatsApp">
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
-<!-- ================= FEEDBACK POPUP ================= -->
 
-<section class="visit-office" data-aos="zoom-in">
 
-    <div class="location-circle">
-        <i class="fas fa-location-dot"></i>
-    </div>
 
-    <h2>Visit Our Office</h2>
-
-    <p>
-        Haripal Cable TV Network<br>
-        Near Indian Bank,<br>
-        Haripal Station Bazar,<br>
-        Hooghly, West Bengal - 712405
-    </p>
-
-    <a href="https://www.google.com/maps/search/?api=1&query=Indian+Bank+Haripal+Station+Bazar+Haripal+Hooghly"
-       target="_blank"
-       class="map-button">
-
-        <i class="fas fa-map-marked-alt"></i>
-        Open in Google Maps
-
-    </a>
-
-</section>
-<!-- ================= PREMIUM FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer data-aos="fade-up">
 
+
 <div class="footer-container">
 
-    <!-- Company -->
 
-    <div class="footer-box">
+<!-- COMPANY -->
 
-        <h3 class="company-name">
+<div class="footer-box">
+
+<h3 class="company-name">
+
 Haripal Cable TV Network
+
 </h3>
 
-            <p style="font-size:18px;line-height:2;">
 
-            Near Indian Bank
+<p style="font-size:16px;">
 
-            <br>
+Near Indian Bank
 
-                Haripal Station Bazar
+<br>
 
-            <br>
+Haripal Station Bazar
 
-                Haripal, Hooghly
+<br>
 
-            <br>
+Haripal, Hooghly
 
-                West Bengal - 712405
+<br>
 
-            </p>
+West Bengal - 712405
 
-    </div>
+</p>
 
-    <!-- Quick Links -->
+</div>
 
-    <div class="footer-box">
 
-        <h4>Quick Links</h4>
 
-        <a href="index.html">Home</a>
-        <a href="services.html">
+<!-- QUICK LINKS -->
+
+<div class="footer-box">
+
+<h4>
+Quick Links
+</h4>
+
+
+<a href="index.html">
+
+<i class="fas fa-angle-right"></i>
+
+Home
+
+</a>
+
+
+<a href="services.html">
 
 <i class="fas fa-angle-right"></i>
 
 Services
 
 </a>
-        <a href="gallery.html">Gallery</a>
-        <a href="team.html">Our Team</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
 
-    </div>
 
-    <!-- Contact -->
+<a href="gallery.html">
 
-    <div class="footer-box">
+<i class="fas fa-angle-right"></i>
 
-        <h4>Contact</h4>
+Gallery
 
-        <p><i class="fas fa-phone"></i> 9800772177</p>
+</a>
 
-        <p><i class="fas fa-phone"></i> 7501230307</p>
 
-        <p><i class="fas fa-envelope"></i> haripalcabletvnetwork@gmail.com</p>
+<a href="team.html">
 
-    </div>
+<i class="fas fa-angle-right"></i>
 
-    <!-- Office -->
+We Are
 
-    <div class="footer-box">
+</a>
 
-        <h4>Office</h4>
 
-        <p>
-        <i class="fas fa-location-dot"></i><br>
+<a href="about.html">
 
-        Near Indian Bank<br>
+<i class="fas fa-angle-right"></i>
 
-        Haripal Station Bazar<br>
+About Us
 
-        Haripal, Hooghly<br>
+</a>
 
-        West Bengal - 712405
-        </p>
 
-    </div>
+<a href="contact.html">
+
+<i class="fas fa-angle-right"></i>
+
+Contact
+
+</a>
+
 
 </div>
 
+
+
+<!-- CONTACT -->
+
+<div class="footer-box">
+
+<h4>
+Contact
+</h4>
+
+
+<p>
+
+<i class="fas fa-phone"></i>
+
+9800772177
+
+</p>
+
+
+<p>
+
+<i class="fas fa-phone"></i>
+
+7501230307
+
+</p>
+
+
+<p>
+
+<i class="fas fa-envelope"></i>
+
+haripalcabletvnetwork@gmail.com
+
+</p>
+
+
+</div>
+
+
+
+<!-- OFFICE -->
+
+<div class="footer-box">
+
+<h4>
+Office
+</h4>
+
+
+<p>
+
+<i class="fas fa-location-dot"></i>
+
+<br>
+
+Near Indian Bank
+
+<br>
+
+Haripal Station Bazar
+
+<br>
+
+Haripal, Hooghly
+
+<br>
+
+West Bengal - 712405
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
 <hr>
+
 
 <div class="footer-bottom">
 
@@ -1486,39 +2260,126 @@ Services
 
 </div>
 
+
 </footer>
 
 
 
-<!-- ================= MOBILE MENU ================= -->
+<!-- =====================================================
+     MOBILE MENU JAVASCRIPT
+===================================================== -->
 
 <script>
 
-const menu=document.querySelector(".menu-toggle");
+const menuToggle =
+document.querySelector(".menu-toggle");
 
-const nav=document.querySelector(".nav-links");
+const navLinks =
+document.querySelector(".nav-links");
 
-menu.addEventListener("click",()=>{
 
-nav.classList.toggle("active");
+if(menuToggle){
+
+    menuToggle.addEventListener("click",()=>{
+
+        navLinks.classList.toggle("active");
+
+        const icon =
+        menuToggle.querySelector("i");
+
+        if(navLinks.classList.contains("active")){
+
+            icon.classList.remove("fa-bars");
+
+            icon.classList.add("fa-xmark");
+
+        }else{
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+}
+
+
+/* Close menu after clicking a link */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+        const icon =
+        menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+
+        icon.classList.add("fa-bars");
+
+    });
+
+});
+
+
+/* Close menu when clicking outside */
+
+document.addEventListener("click",(event)=>{
+
+    if(
+        navLinks.classList.contains("active") &&
+        !navLinks.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ){
+
+        navLinks.classList.remove("active");
+
+        const icon =
+        menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+
+        icon.classList.add("fa-bars");
+
+    }
 
 });
 
 </script>
 
-<!-- ================= AOS ================= -->
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- =====================================================
+     AOS
+===================================================== -->
+
+<script
+src="https://unpkg.com/aos@2.3.4/dist/aos.js">
+</script>
+
 
 <script>
+
 AOS.init({
-duration:1000,
-once:true,
-offset:120
+
+    duration:1000,
+
+    once:true,
+
+    offset:100,
+
+    easing:"ease-out-cubic"
+
 });
+
 </script>
 
-
+<script src="site-settings.js"></script>
 </body>
 
 </html>

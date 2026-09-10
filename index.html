@@ -20,40 +20,69 @@
 
 <!-- ================= NAVBAR ================= -->
 
+<!-- ================= NAVBAR ================= -->
+
 <header>
 
     <nav class="navbar">
 
-        <a href="#" class="logo">
-            <img src="images/HCN.jpg" alt="Haripal Cable TV Network">
+        <a href="index.html" class="logo">
             <div>
                 <h2>Haripal Cable TV Network</h2>
-                <span>Your Trusted Broadband & Cable Service</span>
+                <span data-i18n="nav.tagline">Your Trusted Broadband & Cable Service</span>
             </div>
         </a>
 
         <ul class="nav-links">
 
-            <li><a href="index.html#feeds">Feeds</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="team.html">We Are</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a class="active" href="index.html#feeds">Feeds</a>
+            </li>
+
+            <li>
+                <a href="services.html">Services</a>
+            </li>
+
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+
+            <li>
+                <a href="team.html">We Are</a>
+            </li>
+
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
 
             <li>
                 <a href="https://www.facebook.com/profile.php?id=61586978473232"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener noreferrer">
                     <i class="fab fa-facebook"></i>
                 </a>
             </li>
 
         </ul>
+        <div class="site-controls">
 
+    <button
+    type="button"
+    class="theme-toggle"
+    aria-label="Switch to Night Mode"
+    title="Night Mode">
+
+    🌙
+
+</button>
+
+</div>
         <div class="menu-toggle">
-
             <i class="fas fa-bars"></i>
-
         </div>
 
     </nav>
@@ -175,6 +204,6 @@
 </footer>
 
 <script src="script.js"></script>
-
+<script src="site-settings.js"></script>
 </body>
 </html>

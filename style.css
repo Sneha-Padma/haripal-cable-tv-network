@@ -1,913 +1,650 @@
-/* ==========================================
-   Haripal Cable TV Network
-   Premium Business Website
-========================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#ffffff;
-    color:#1e293b;
-    overflow-x:hidden;
-}
-
-/*==========================
-        NAVBAR
-==========================*/
-
-header{
-
-    position:fixed;
-
-    top:0;
-
-    width:100%;
-
-    background:#ffffff;
-
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
-
-    z-index:1000;
-
-}
-
-.navbar{
-
-    max-width:1300px;
-
-    margin:auto;
-
-    padding:18px 40px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    text-decoration:none;
-
-    color:#111827;
-
-}
-
-.logo img{
-
-    width:60px;
-
-    margin-right:15px;
-
-}
-
-.logo h2{
-
-    font-size:24px;
-
-    color:#2563EB;
-
-}
-
-.logo span{
-
-    font-size:13px;
-
-    color:#64748B;
-
-}
-
-.nav-links{
-
-    display:flex;
-
-    list-style:none;
-
-    gap:35px;
-
-}
-
-.nav-links a{
-
-    text-decoration:none;
-
-    color:#334155;
-
-    font-weight:500;
-
-    transition:.3s;
-
-    position:relative;
-
-}
-
-.nav-links a::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:0;
-
-    height:3px;
-
-    left:0;
-
-    bottom:-8px;
-
-    background:#2563EB;
-
-    transition:.3s;
-
-}
-
-.nav-links a:hover::after{
-
-    width:100%;
-
-}
-
-.nav-links a:hover{
-
-    color:#2563EB;
-
-}
-
-.menu-toggle{
-
-    display:none;
-
-    font-size:28px;
-
-    cursor:pointer;
-
-}
-
-@media(max-width:900px){
-
-.nav-links{
-
-    position:fixed;
-
-    top:90px;
-
-    right:-100%;
-
-    width:260px;
-
-    height:100vh;
-
-    background:#fff;
-
-    flex-direction:column;
-
-    padding:40px;
-
-    transition:.4s;
-
-    box-shadow:-10px 0 20px rgba(0,0,0,.08);
+/* =========================================================
+   HARIPAL CABLE TV NETWORK
+   GLOBAL STYLE SYSTEM
+   LIGHT THEME ONLY
+========================================================= */
 
-}
-
-.nav-links.active{
-
-    right:0;
-
-}
-
-.menu-toggle{
-
-    display:block;
-
-}
-
-}
-
-/* ===== HERO ===== */
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 20px 80px;
-    background:linear-gradient(135deg,#2563eb,#0f172a);
-    position:relative;
-    overflow:hidden;
-    color:#fff;
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    background:rgba(255,255,255,.05);
-    top:-250px;
-    right:-200px;
-    animation:rotateCircle 20s linear infinite;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    width:450px;
-    height:450px;
-    border-radius:50%;
-    background:rgba(255,255,255,.04);
-    bottom:-180px;
-    left:-150px;
-    animation:rotateCircle 14s linear infinite reverse;
-}
-
-.hero-content{
-    max-width:850px;
-    position:relative;
-    z-index:5;
-    animation:fadeUp 1s ease;
-}
-
-.hero h1{
-    font-size:56px;
-    color:#fff;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:20px;
-    color:#e2e8f0;
-    line-height:1.8;
-    margin-bottom:35px;
-}
-
-@keyframes rotateCircle{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.btn-primary,
-.btn-secondary{
-    text-decoration:none;
-    padding:15px 30px;
-    border-radius:50px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.btn-primary{
-    background:#2563eb;
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#1d4ed8;
-    transform:translateY(-3px);
-}
-
-.btn-secondary{
-    border:2px solid #1877f2;
-    color:#1877f2;
-}
-
-.btn-secondary:hover{
-    background:#1877f2;
-    color:white;
-}
-/* ===== FOOTER ===== */
-
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:768px){
-
-.logo h2{
-    font-size:22px;
-}
-
-.logo span{
-    font-size:12px;
-}
-
-.hero h1{
-    font-size:36px;
-}
 
-.hero p{
-    font-size:16px;
-}
-
-.hero-buttons{
-    flex-direction:column;
-}
-
-.btn-primary,
-.btn-secondary{
-    width:100%;
-}
-
-}
-/*==========================
-        FEEDS
-==========================*/
-
-.feeds{
-    padding:100px 20px;
-    background:#f8fafc;
-}
-
-.feeds h2{
-    text-align:center;
-    font-size:42px;
-    color:#0f172a;
-    margin-bottom:50px;
-}
-
-.feed-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-}
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
 
-.feed-card{
-    background:#ffffff;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.35s;
-}
-
-.feed-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(37,99,235,.15);
-}
+:root {
 
-.feed-card h3{
-    color:#2563eb;
-    margin-bottom:15px;
-}
+    --hcn-bg: #faf8f3;
+    --hcn-bg-secondary: #fffdf8;
 
-.feed-card p{
-    color:#64748b;
-    line-height:1.8;
-}
-img{
-    max-width:100%;
-    height:auto;
-    display:block;
-}
+    --hcn-card: #ffffff;
+    --hcn-card-soft: #f8f5ed;
 
-section{
-    width:100%;
-    overflow:hidden;
-}
+    --hcn-text: #0f172a;
+    --hcn-text-secondary: #475569;
 
-.container{
-    width:min(1300px,92%);
-    margin:auto;
-}
-/*=========================================
-PREMIUM RESPONSIVE DESIGN
-Desktop • Laptop • Tablet • Mobile
-=========================================*/
-
-/* 1400px+ */
-@media (min-width:1400px){
-
-.hero-content{
-    max-width:950px;
-}
+    --hcn-primary: #2563eb;
+    --hcn-primary-dark: #1d4ed8;
 
-.hero h1{
-    font-size:64px;
-}
+    --hcn-accent: #00d4ff;
 
-.hero p{
-    font-size:22px;
-}
+    --hcn-border: #e5e1d8;
 
+    --hcn-shadow:
+        0 20px 50px rgba(15, 23, 42, .08);
 }
 
 
-/* Laptop */
+/* =========================================================
+   RESET
+========================================================= */
 
-@media (max-width:1200px){
+* {
 
-.navbar{
-    padding:18px 25px;
-}
+    margin: 0;
+    padding: 0;
 
-.hero h1{
-    font-size:48px;
-}
+    box-sizing: border-box;
 
-.hero p{
-    font-size:18px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.feed-container{
-    grid-template-columns:repeat(2,1fr);
-}
+html {
 
+    scroll-behavior: smooth;
 }
 
+body {
 
-/* Tablet */
+    background: var(--hcn-bg);
 
-@media (max-width:992px){
+    color: var(--hcn-text);
 
-.logo img{
-    width:55px;
-}
+    overflow-x: hidden;
 
-.logo h2{
-    font-size:20px;
+    line-height: 1.6;
 }
-
-.nav-links{
-
-    position:fixed;
-
-    top:90px;
 
-    right:-100%;
+img {
 
-    width:280px;
+    max-width: 100%;
 
-    height:100vh;
+    height: auto;
 
-    background:#fff;
-
-    flex-direction:column;
-
-    padding:45px 35px;
-
-    box-shadow:-15px 0 40px rgba(0,0,0,.12);
-
+    display: block;
 }
 
-.nav-links.active{
-    right:0;
-}
+a {
 
-.menu-toggle{
-    display:block;
+    color: inherit;
 }
-
-.hero{
 
-    padding:160px 20px 90px;
+button,
+input,
+textarea,
+select {
 
+    font-family: inherit;
 }
 
-.hero h1{
-    font-size:42px;
-}
-
-.hero p{
-    font-size:18px;
-}
+section {
 
-.feed-container{
-    grid-template-columns:repeat(2,1fr);
-}
+    width: 100%;
 
+    overflow: hidden;
 }
-/* ==========================================
-   CINEMATIC TECHNOLOGY EFFECT
-========================================== */
-
-.hero{
-    isolation:isolate;
-}
-
-/* Technology orbit container */
 
-.tech-orbit{
+.container {
 
-    position:absolute;
+    width: min(1300px, 92%);
 
-    width:760px;
-    height:760px;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    z-index:1;
-
-    pointer-events:none;
-
-    opacity:.85;
-
+    margin: auto;
 }
-
 
-/* ------------------------------------------
-   GLOWING ORBIT RINGS
------------------------------------------- */
 
-.orbit-ring{
+/* =========================================================
+   NAVBAR
+========================================================= */
 
-    position:absolute;
+header {
 
-    border:1px solid rgba(255,255,255,.10);
+    position: fixed;
 
-    border-radius:50%;
+    top: 0;
+    left: 0;
 
-    left:50%;
-    top:50%;
+    width: 100%;
 
-    transform:translate(-50%,-50%);
+    background:
+        rgba(255, 253, 248, .96);
 
     box-shadow:
-        0 0 25px rgba(37,99,235,.12),
-        inset 0 0 25px rgba(0,212,255,.05);
+        0 2px 15px rgba(0, 0, 0, .08);
 
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 1000;
 }
 
 
-.ring-one{
+/* =========================================================
+   NAVBAR CONTAINER
+========================================================= */
 
-    width:600px;
-    height:600px;
+.navbar {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 18px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   TEXT-ONLY BRANDING
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    color: var(--hcn-text);
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.logo > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.logo h2 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -.5px;
+
+    color: var(--hcn-primary);
+
+    transition:
+        color .35s ease,
+        letter-spacing .35s ease,
+        text-shadow .35s ease,
+        transform .35s ease;
+}
+
+.logo span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: 400;
+
+    color: var(--hcn-text-secondary);
+
+    letter-spacing: .2px;
+
+    transition:
+        color .35s ease,
+        letter-spacing .35s ease;
+}
+
+
+/* =========================================================
+   LOGO HOVER
+========================================================= */
+
+.logo:hover h2 {
+
+    color: var(--hcn-primary-dark);
+
+    letter-spacing: .1px;
+
+    transform:
+        translateY(-1px);
+
+    text-shadow:
+        0 0 8px rgba(37, 99, 235, .25),
+        0 0 20px rgba(37, 99, 235, .15);
+}
+
+.logo:hover span {
+
+    color: var(--hcn-primary);
+
+    letter-spacing: .4px;
+}
+
+
+/* Animated logo underline */
+
+.logo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--hcn-primary),
+            var(--hcn-accent),
+            transparent
+        );
+
+    transition:
+        width .5s ease;
+}
+
+.logo:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    list-style: none;
+
+    gap: 35px;
+}
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: var(--hcn-text);
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition:
+        color .3s ease;
+}
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 3px;
+
+    left: 0;
+
+    bottom: -8px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--hcn-primary),
+            var(--hcn-accent)
+        );
+
+    transition:
+        width .3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+    width: 100%;
+}
+
+.nav-links a:hover {
+
+    color: var(--hcn-primary);
+}
+
+
+/* Facebook icon */
+
+.nav-links a i {
+
+    font-size: 19px;
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+}
+
+.nav-links a:hover i {
+
+    transform:
+        scale(1.15);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    color: var(--hcn-text);
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.menu-toggle:hover {
+
+    background:
+        rgba(37, 99, 235, .08);
+
+    color:
+        var(--hcn-primary);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb 0%,
+            #1e40af 35%,
+            #0f172a 100%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   HERO BACKGROUND CIRCLES
+========================================================= */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, .05);
+
+    top: -250px;
+
+    right: -200px;
 
     animation:
-        orbitRotate 25s linear infinite;
+        rotateCircle 20s linear infinite;
 
+    pointer-events: none;
 }
 
+.hero::after {
 
-.ring-two{
+    content: "";
 
-    width:430px;
-    height:430px;
+    position: absolute;
 
-    border-color:rgba(0,212,255,.12);
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, .04);
+
+    bottom: -180px;
+
+    left: -150px;
 
     animation:
-        orbitRotateReverse 18s linear infinite;
+        rotateCircle 14s linear infinite reverse;
 
+    pointer-events: none;
 }
 
 
-/* ------------------------------------------
-   TECHNOLOGY ICONS
------------------------------------------- */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
-.tech-icon{
+.hero-content {
 
-    position:absolute;
+    max-width: 850px;
 
-    width:100px;
-    height:100px;
+    position: relative;
 
-    border-radius:50%;
+    z-index: 5;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:rgba(255,255,255,.65);
-
-    border:1px solid rgba(255,255,255,.13);
-
-    background:rgba(255,255,255,.035);
-
-    backdrop-filter:blur(8px);
-
-    box-shadow:
-        0 0 30px rgba(37,99,235,.12),
-        inset 0 0 25px rgba(255,255,255,.025);
-
-    animation:cinematicFloat 5s ease-in-out infinite;
-
+    animation:
+        fadeUp 1s ease;
 }
 
 
-.tech-icon i{
+/* =========================================================
+   HERO BRAND
+========================================================= */
 
-    font-size:27px;
+.hero-brand {
 
-    margin-bottom:7px;
+    display: flex;
 
-    color:#7dd3fc;
+    align-items: center;
 
-    filter:
-        drop-shadow(0 0 8px rgba(0,212,255,.65));
+    justify-content: center;
 
-}
+    gap: 15px;
 
+    margin-bottom: 22px;
 
-.tech-icon span{
+    font-size: 13px;
 
-    font-size:11px;
+    font-weight: 600;
 
-    letter-spacing:1px;
+    letter-spacing: 5px;
 
-    text-transform:uppercase;
-
-    color:#cbd5e1;
-
-}
-
-
-/* ------------------------------------------
-   INDIVIDUAL POSITIONS
------------------------------------------- */
-
-.mobile-icon{
-
-    top:30px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    animation-delay:0s;
-
-}
-
-
-.router-icon{
-
-    right:35px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    animation-delay:1s;
-
-}
-
-
-.broadband-icon{
-
-    right:120px;
-    bottom:55px;
-
-    animation-delay:2s;
-
-}
-
-
-.ott-icon{
-
-    left:120px;
-    bottom:55px;
-
-    animation-delay:3s;
-
-}
-
-
-.iptv-icon{
-
-    left:35px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    animation-delay:4s;
-
-}
-
-
-/* ------------------------------------------
-   CINEMATIC FLOAT
------------------------------------------- */
-
-@keyframes cinematicFloat{
-
-    0%,100%{
-
-        transform:translateY(0)
-                   scale(1);
-
-        opacity:.55;
-
-    }
-
-    50%{
-
-        transform:translateY(-12px)
-                   scale(1.04);
-
-        opacity:1;
-
-    }
-
-}
-
-
-/* ------------------------------------------
-   ORBIT ROTATION
------------------------------------------- */
-
-@keyframes orbitRotate{
-
-    from{
-        transform:
-            translate(-50%,-50%)
-            rotate(0deg);
-    }
-
-    to{
-        transform:
-            translate(-50%,-50%)
-            rotate(360deg);
-    }
-
-}
-
-
-@keyframes orbitRotateReverse{
-
-    from{
-        transform:
-            translate(-50%,-50%)
-            rotate(360deg);
-    }
-
-    to{
-        transform:
-            translate(-50%,-50%)
-            rotate(0deg);
-    }
-
-}
-
-
-/* ==========================================
-   CINEMATIC COMPANY NAME
-========================================== */
-
-.hero-brand{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:15px;
-
-    margin-bottom:22px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-    letter-spacing:5px;
-
-    color:#bfdbfe;
+    color: #bfdbfe;
 
     transition:
         letter-spacing .6s ease,
         color .6s ease,
         text-shadow .6s ease;
-
 }
 
+.hero-brand span:not(.brand-line) {
 
-.hero-brand span:not(.brand-line){
+    cursor: pointer;
 
-    cursor:pointer;
-
-    position:relative;
-
+    position: relative;
 }
 
+.hero-brand span:not(.brand-line)::after {
 
-.hero-brand span:not(.brand-line)::after{
+    content: "";
 
-    content:"";
+    position: absolute;
 
-    position:absolute;
+    left: 0;
 
-    left:0;
+    bottom: -7px;
 
-    bottom:-7px;
+    width: 0;
 
-    width:0;
-
-    height:2px;
+    height: 2px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #00d4ff,
+            var(--hcn-accent),
             transparent
         );
 
-    transition:width .6s ease;
-
+    transition:
+        width .6s ease;
 }
 
+.hero-brand:hover {
 
-.hero-brand:hover{
+    letter-spacing: 8px;
 
-    letter-spacing:8px;
-
-    color:#ffffff;
+    color: #ffffff;
 
     text-shadow:
-        0 0 8px rgba(0,212,255,.8),
-        0 0 25px rgba(37,99,235,.65),
-        0 0 50px rgba(0,212,255,.35);
+        0 0 8px rgba(0, 212, 255, .8),
+        0 0 25px rgba(37, 99, 235, .65),
+        0 0 50px rgba(0, 212, 255, .35);
+}
 
+.hero-brand:hover
+span:not(.brand-line)::after {
+
+    width: 100%;
 }
 
 
-.hero-brand:hover span:not(.brand-line)::after{
+/* =========================================================
+   HERO BRAND LINES
+========================================================= */
 
-    width:100%;
+.brand-line {
 
-}
+    width: 45px;
 
-
-.brand-line{
-
-    width:45px;
-
-    height:1px;
+    height: 1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #00d4ff
+            var(--hcn-accent)
         );
 
-    transition:.6s ease;
-
+    transition:
+        width .6s ease;
 }
 
+.hero-brand:hover .brand-line {
 
-.hero-brand:hover .brand-line{
-
-    width:75px;
+    width: 75px;
 
     box-shadow:
-        0 0 12px #00d4ff;
-
+        0 0 12px var(--hcn-accent);
 }
 
 
-/* ==========================================
-   HERO TITLE ENHANCEMENT
-========================================== */
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
-.hero h1 span{
+.hero h1 {
 
-    display:inline-block;
+    font-size: 56px;
+
+    line-height: 1.2;
+
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+
+    display: inline-block;
 
     background:
         linear-gradient(
@@ -917,482 +654,1106 @@ Desktop • Laptop • Tablet • Mobile
             #ffffff
         );
 
-    background-size:200% auto;
+    background-size: 200% auto;
 
-    -webkit-background-clip:text;
+    -webkit-background-clip: text;
 
-    background-clip:text;
+    background-clip: text;
 
-    -webkit-text-fill-color:transparent;
+    -webkit-text-fill-color: transparent;
 
-    animation:textShimmer 5s linear infinite;
-
+    animation:
+        textShimmer 5s linear infinite;
 }
 
 
-@keyframes textShimmer{
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
 
-    to{
+.hero p {
 
-        background-position:
-            200% center;
+    font-size: 20px;
 
-    }
+    color: #e2e8f0;
 
+    line-height: 1.8;
+
+    margin-bottom: 35px;
 }
 
 
-/* ==========================================
-   CINEMATIC BUTTON GLOW
-========================================== */
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
-.btn-primary{
+.hero-buttons {
 
-    position:relative;
+    display: flex;
 
-    overflow:hidden;
+    justify-content: center;
 
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+
+    text-decoration: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    transition:
+        transform .3s ease,
+        background-color .3s ease,
+        color .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
 }
 
 
-.btn-primary::before{
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
 
-    content:"";
+.btn-primary {
 
-    position:absolute;
+    position: relative;
 
-    top:0;
-    left:-120%;
+    overflow: hidden;
 
-    width:80%;
-    height:100%;
+    background:
+        var(--hcn-primary);
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, .25);
+}
+
+.btn-primary::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 80%;
+
+    height: 100%;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.45),
+            rgba(255, 255, 255, .45),
             transparent
         );
 
-    transform:skewX(-20deg);
+    transform:
+        skewX(-20deg);
 
-    transition:.7s;
-
+    transition:
+        .7s;
 }
 
+.btn-primary:hover::before {
 
-.btn-primary:hover::before{
-
-    left:140%;
-
+    left: 140%;
 }
 
-
-.btn-primary:hover{
-
-    box-shadow:
-        0 0 15px rgba(37,99,235,.6),
-        0 0 35px rgba(37,99,235,.35);
-
-}
-
-/* Mobile */
-
-@media (max-width:768px){
-
-.navbar{
-    padding:16px 18px;
-}
-
-.logo img{
-    width:48px;
-}
-
-.logo h2{
-    font-size:18px;
-}
-
-.logo span{
-    font-size:11px;
-}
-
-.hero{
-    min-height:90vh;
-}
-
-.hero h1{
-    font-size:34px;
-    line-height:1.3;
-}
-
-.hero p{
-    font-size:16px;
-}
-
-.hero-buttons{
-    flex-direction:column;
-}
-
-.btn-primary,
-.btn-secondary{
-    width:100%;
-}
-
-.feed-container{
-    grid-template-columns:1fr;
-}
-
-.feeds h2{
-    font-size:32px;
-}
-
-.feed-card{
-    padding:28px;
-}
-
-}
-
-
-/* Small Phones */
-
-@media (max-width:480px){
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:120px 20px 80px;
+.btn-primary:hover {
 
     background:
-    linear-gradient(135deg,#2563eb,#0f172a);
+        var(--hcn-primary-dark);
 
-    color:#fff;
+    transform:
+        translateY(-3px);
 
-    position:relative;
-
-    overflow:hidden;
-
+    box-shadow:
+        0 0 15px rgba(37, 99, 235, .6),
+        0 0 35px rgba(37, 99, 235, .35);
 }
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.btn-secondary {
+
+    border:
+        2px solid #1877f2;
+
+    color:
+        #1877f2;
+
+    background:
+        rgba(255, 255, 255, .04);
+}
+
+.btn-secondary:hover {
+
+    background:
+        #1877f2;
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(24, 119, 242, .25);
+}
+
+
+/* =========================================================
+   TECHNOLOGY ORBIT
+========================================================= */
+
+.tech-orbit {
+
+    position: absolute;
+
+    width: 760px;
+    height: 760px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: .85;
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+========================================================= */
+
+.orbit-ring {
+
+    position: absolute;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    box-shadow:
+        0 0 25px rgba(37, 99, 235, .12),
+        inset 0 0 25px rgba(0, 212, 255, .05);
+}
+
+.ring-one {
+
+    width: 600px;
+    height: 600px;
+
+    animation:
+        orbitRotate 25s linear infinite;
+}
+
+.ring-two {
+
+    width: 430px;
+    height: 430px;
+
+    border-color:
+        rgba(0, 212, 255, .12);
+
+    animation:
+        orbitRotateReverse 18s linear infinite;
+}
+
+
+/* =========================================================
+   TECHNOLOGY ICONS
+========================================================= */
+
+.tech-icon {
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color:
+        rgba(255, 255, 255, .65);
+
+    border:
+        1px solid rgba(255, 255, 255, .13);
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    box-shadow:
+        0 0 30px rgba(37, 99, 235, .12),
+        inset 0 0 25px rgba(255, 255, 255, .025);
+
+    animation:
+        cinematicFloat 5s ease-in-out infinite;
+}
+
+.tech-icon i {
+
+    font-size: 27px;
+
+    margin-bottom: 7px;
+
+    color:
+        #7dd3fc;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(0, 212, 255, .65)
+        );
+}
+
+.tech-icon span {
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color:
+        #cbd5e1;
+}
+
+
+/* =========================================================
+   TECHNOLOGY POSITIONS
+========================================================= */
+
+.mobile-icon {
+
+    top: 30px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    animation-delay: 0s;
+}
+
+.router-icon {
+
+    right: 35px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    animation-delay: 1s;
+}
+
+.broadband-icon {
+
+    right: 120px;
+    bottom: 55px;
+
+    animation-delay: 2s;
+}
+
+.ott-icon {
+
+    left: 120px;
+    bottom: 55px;
+
+    animation-delay: 3s;
+}
+
+.iptv-icon {
+
+    left: 35px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    animation-delay: 4s;
+}
+
+
+/* =========================================================
+   FEEDS
+========================================================= */
+
+.feeds {
+
+    padding: 100px 20px;
+
+    background:
+        var(--hcn-bg);
+
+    color:
+        var(--hcn-text);
+}
+
+.feeds h2 {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    color:
+        var(--hcn-text);
+
+    margin-bottom: 50px;
+}
+
+.feed-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px, 1fr)
+        );
+
+    gap: 30px;
+}
+
+.feed-card {
+
+    background:
+        var(--hcn-card);
+
+    color:
+        var(--hcn-text);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid var(--hcn-border);
+
+    box-shadow:
+        var(--hcn-shadow);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.feed-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(37, 99, 235, .15);
+
+    border-color:
+        rgba(37, 99, 235, .25);
+}
+
+.feed-card h3 {
+
+    color:
+        var(--hcn-primary);
+
+    margin-bottom: 15px;
+}
+
+.feed-card p {
+
+    color:
+        var(--hcn-text-secondary);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    background:
+        #0f172a;
+
+    color:
+        #ffffff;
+
+    text-align:
+        center;
+
+    padding:
+        25px;
+}
+
+footer p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    color:
+        #cbd5e1;
+}
+
+
+/* =========================================================
+   HERO CINEMATIC VIGNETTE
+========================================================= */
+
 .hero .cinematic-vignette {
-    position:absolute;
-    inset:0;
-    pointer-events:none;
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
 
     background:
         radial-gradient(
             ellipse at center,
             transparent 35%,
-            rgba(2,8,23,.35) 70%,
-            rgba(2,8,23,.75) 100%
+            rgba(2, 8, 23, .35) 70%,
+            rgba(2, 8, 23, .75) 100%
         );
 
-    z-index:2;
-}
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-width:700px;
-
-height:700px;
-
-border-radius:50%;
-
-background:rgba(255,255,255,.05);
-
-top:-250px;
-
-right:-200px;
-
-animation:rotateCircle 20s linear infinite;
-
-}
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-width:450px;
-
-height:450px;
-
-border-radius:50%;
-
-background:rgba(255,255,255,.04);
-
-bottom:-180px;
-
-left:-150px;
-
-animation:rotateCircle 14s linear infinite reverse;
-
-}
-
-@keyframes rotateCircle{
-
-from{
-transform:rotate(0deg);
-}
-
-to{
-transform:rotate(360deg);
-}
-
-}
-
-.hero-content{
-
-position:relative;
-
-z-index:5;
-
-animation:fadeUp 1s ease;
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(50px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-.hero h1{
-    font-size:28px;
-}
-
-.hero p{
-    font-size:15px;
-}
-
-.logo span{
-    display:none;
-}
-
-.feed-card{
-    padding:22px;
-}
-
-footer{
-    padding:20px;
-}
-
-}
-/* ==========================================
-   TECHNOLOGY ORBIT - TABLET
-========================================== */
-
-@media(max-width:992px){
-
-    .tech-orbit{
-
-        width:600px;
-        height:600px;
-
-        opacity:.55;
-
-    }
-
-    .ring-one{
-
-        width:470px;
-        height:470px;
-
-    }
-
-    .ring-two{
-
-        width:340px;
-        height:340px;
-
-    }
-
-    .tech-icon{
-
-        width:75px;
-        height:75px;
-
-    }
-
-    .tech-icon i{
-
-        font-size:21px;
-
-    }
-
-    .tech-icon span{
-
-        font-size:9px;
-
-    }
-
-    .mobile-icon{
-
-        top:35px;
-
-    }
-
-    .router-icon{
-
-        right:20px;
-
-    }
-
-    .broadband-icon{
-
-        right:75px;
-        bottom:40px;
-
-    }
-
-    .ott-icon{
-
-        left:75px;
-        bottom:40px;
-
-    }
-
-    .iptv-icon{
-
-        left:20px;
-
-    }
-
+    z-index: 2;
 }
 
 
-/* ==========================================
-   TECHNOLOGY ORBIT - MOBILE
-========================================== */
+/* =========================================================
+   CINEMATIC ANIMATIONS
+========================================================= */
 
-@media(max-width:600px){
+@keyframes rotateCircle {
 
-    .tech-orbit{
+    from {
 
-        width:420px;
-        height:420px;
-
-        opacity:.28;
-
+        transform:
+            rotate(0deg);
     }
 
-    .ring-one{
+    to {
 
-        width:330px;
-        height:330px;
+        transform:
+            rotate(360deg);
+    }
+}
 
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px);
     }
 
-    .ring-two{
+    to {
 
-        width:240px;
-        height:240px;
+        opacity: 1;
 
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes textShimmer {
+
+    to {
+
+        background-position:
+            200% center;
+    }
+}
+
+
+@keyframes cinematicFloat {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity: .55;
     }
 
-    .tech-icon{
+    50% {
 
-        width:60px;
-        height:60px;
+        transform:
+            translateY(-12px)
+            scale(1.04);
 
-        background:rgba(255,255,255,.025);
+        opacity: 1;
+    }
+}
 
+
+@keyframes orbitRotate {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
     }
 
-    .tech-icon i{
+    to {
 
-        font-size:17px;
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
 
-        margin-bottom:2px;
 
+@keyframes orbitRotateReverse {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
     }
 
-    .tech-icon span{
+    to {
 
-        font-size:7px;
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
 
-        letter-spacing:.5px;
 
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+
+        padding:
+            18px 25px;
     }
 
-    .mobile-icon{
+    .nav-links {
 
-        top:20px;
-
+        gap: 25px;
     }
 
-    .router-icon{
+    .hero h1 {
 
-        right:8px;
-
+        font-size: 48px;
     }
 
-    .broadband-icon{
+    .hero p {
 
-        right:45px;
-        bottom:25px;
-
+        font-size: 18px;
     }
 
-    .ott-icon{
+    .feed-container {
 
-        left:45px;
-        bottom:25px;
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
 
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .nav-links {
+
+        position: fixed;
+
+        top: 90px;
+
+        right: -100%;
+
+        width: 280px;
+
+        height: calc(100vh - 90px);
+
+        background:
+            rgba(255, 253, 248, .98);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding:
+            45px 35px;
+
+        box-shadow:
+            -15px 0 40px rgba(0, 0, 0, .12);
+
+        transition:
+            right .4s ease;
+
+        overflow-y: auto;
     }
 
-    .iptv-icon{
+    .nav-links.active {
 
-        left:8px;
-
+        right: 0;
     }
 
-    .hero-brand{
+    .nav-links li {
 
-        font-size:9px;
-
-        letter-spacing:3px;
-
-        gap:8px;
-
+        width: 100%;
     }
 
-    .brand-line{
+    .nav-links a {
 
-        width:25px;
+        display: inline-block;
 
+        padding:
+            8px 0;
     }
 
-    .hero-brand:hover{
+    .menu-toggle {
 
-        letter-spacing:4px;
-
+        display: flex;
     }
 
+    .hero {
+
+        padding:
+            160px 20px 90px;
+    }
+
+    .hero h1 {
+
+        font-size: 42px;
+    }
+
+    .hero p {
+
+        font-size: 18px;
+    }
+
+
+    /* TECHNOLOGY ORBIT */
+
+    .tech-orbit {
+
+        width: 600px;
+        height: 600px;
+
+        opacity: .55;
+    }
+
+    .ring-one {
+
+        width: 470px;
+        height: 470px;
+    }
+
+    .ring-two {
+
+        width: 340px;
+        height: 340px;
+    }
+
+    .tech-icon {
+
+        width: 75px;
+        height: 75px;
+    }
+
+    .tech-icon i {
+
+        font-size: 21px;
+    }
+
+    .tech-icon span {
+
+        font-size: 9px;
+    }
+
+    .mobile-icon {
+
+        top: 35px;
+    }
+
+    .router-icon {
+
+        right: 20px;
+    }
+
+    .broadband-icon {
+
+        right: 75px;
+        bottom: 40px;
+    }
+
+    .ott-icon {
+
+        left: 75px;
+        bottom: 40px;
+    }
+
+    .iptv-icon {
+
+        left: 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+
+        padding:
+            16px 18px;
+    }
+
+    .logo h2 {
+
+        font-size: 20px;
+    }
+
+    .logo span {
+
+        font-size: 11px;
+    }
+
+    .hero {
+
+        min-height: 90vh;
+    }
+
+    .hero h1 {
+
+        font-size: 34px;
+
+        line-height: 1.3;
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        width: min(100%, 340px);
+
+        margin:
+            0 auto;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+
+        width: 100%;
+    }
+
+    .feed-container {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .feeds {
+
+        padding:
+            80px 20px;
+    }
+
+    .feeds h2 {
+
+        font-size: 32px;
+
+        margin-bottom: 35px;
+    }
+
+    .feed-card {
+
+        padding: 28px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .tech-orbit {
+
+        width: 420px;
+        height: 420px;
+
+        opacity: .28;
+    }
+
+    .ring-one {
+
+        width: 330px;
+        height: 330px;
+    }
+
+    .ring-two {
+
+        width: 240px;
+        height: 240px;
+    }
+
+    .tech-icon {
+
+        width: 60px;
+        height: 60px;
+
+        background:
+            rgba(255, 255, 255, .025);
+    }
+
+    .tech-icon i {
+
+        font-size: 17px;
+
+        margin-bottom: 2px;
+    }
+
+    .tech-icon span {
+
+        font-size: 7px;
+
+        letter-spacing: .5px;
+    }
+
+    .mobile-icon {
+
+        top: 20px;
+    }
+
+    .router-icon {
+
+        right: 8px;
+    }
+
+    .broadband-icon {
+
+        right: 45px;
+
+        bottom: 25px;
+    }
+
+    .ott-icon {
+
+        left: 45px;
+
+        bottom: 25px;
+    }
+
+    .iptv-icon {
+
+        left: 8px;
+    }
+
+    .hero-brand {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        gap: 8px;
+    }
+
+    .brand-line {
+
+        width: 25px;
+    }
+
+    .hero-brand:hover {
+
+        letter-spacing: 4px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+
+        padding:
+            14px 15px;
+    }
+
+    .logo h2 {
+
+        font-size: 17px;
+    }
+
+    .logo span {
+
+        font-size: 10px;
+    }
+
+    .hero {
+
+        min-height: 100vh;
+
+        padding:
+            120px 20px 80px;
+    }
+
+    .hero h1 {
+
+        font-size: 28px;
+    }
+
+    .hero p {
+
+        font-size: 15px;
+    }
+
+    .feed-card {
+
+        padding: 22px;
+    }
+
+    footer {
+
+        padding:
+            20px;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .hero-content {
+
+        max-width: 950px;
+    }
+
+    .hero h1 {
+
+        font-size: 64px;
+    }
+
+    .hero p {
+
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible {
+
+    outline:
+        3px solid rgba(37, 99, 235, .55);
+
+    outline-offset:
+        4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+    }
 }

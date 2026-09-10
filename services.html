@@ -35,9 +35,11 @@ header{
     left:0;
     width:100%;
     z-index:999;
-    backdrop-filter:blur(18px);
-    background:rgba(5,20,45,.92);
-    box-shadow:0 10px 35px rgba(0,0,0,.35);
+    background:#ffffff;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    backdrop-filter:none;
 }
 
 .navbar{
@@ -49,30 +51,7 @@ header{
     padding:15px 35px;
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    text-decoration:none;
-    color:#fff;
-}
 
-.logo img{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    margin-right:15px;
-    border:3px solid #00d4ff;
-}
-
-.logo h2{
-    font-size:22px;
-    font-weight:700;
-}
-
-.logo span{
-    font-size:13px;
-    color:#cbd8ef;
-}
 
 .nav-links{
     display:flex;
@@ -82,21 +61,24 @@ header{
 }
 
 .nav-links a{
-    color:#fff;
+    color:#334155;
     text-decoration:none;
     font-weight:500;
     transition:.35s;
+    position:relative;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
-    color:#00d4ff;
+    color:#2563eb;
 }
 
 .nav-links i{
     font-size:20px;
 }
-
+.nav-links i{
+    font-size:20px;
+}
 .menu-toggle{
     display:none;
     color:white;
@@ -254,11 +236,11 @@ SECTION TITLE
 
 <a href="index.html" class="logo">
 
-<img src="images/HCN.jpg" alt="Haripal Cable TV Network">
+
 
 <div>
 <h2>Haripal Cable TV Network</h2>
-<span>Your Trusted Broadband & Cable Service</span>
+<span data-i18n="nav.tagline">Your Trusted Broadband & Cable Service</span>
 </div>
 
 </a>
@@ -284,7 +266,10 @@ SECTION TITLE
 </li>
 
 </ul>
+<div class="site-controls">
 
+
+</div>
 <div class="menu-toggle">
 <i class="fas fa-bars"></i>
 </div>
@@ -455,7 +440,115 @@ PARTNERS
 .partner-card small{
     color:#dce9ff;
 }
+/*==================================
+RECHARGE OPTIONS
+===================================*/
 
+.recharge-section{
+    padding:90px 8%;
+    background:#071B35;
+}
+
+.recharge-intro{
+    max-width:850px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+
+.recharge-intro p{
+    color:#d8e6ff;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.recharge-grid{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.recharge-card{
+    position:relative;
+    overflow:hidden;
+    padding:40px 35px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    backdrop-filter:blur(18px);
+    transition:.4s;
+}
+
+.recharge-card::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:rgba(0,212,255,.08);
+    top:-120px;
+    right:-120px;
+}
+
+.recharge-card:hover{
+    transform:translateY(-10px);
+    border-color:#00d4ff;
+    box-shadow:0 25px 50px rgba(0,212,255,.16);
+}
+
+.recharge-icon{
+    width:75px;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:20px;
+    background:linear-gradient(135deg,#1565ff,#00d4ff);
+    font-size:30px;
+    margin-bottom:25px;
+    box-shadow:0 12px 30px rgba(21,101,255,.3);
+}
+
+.recharge-card h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.recharge-card p{
+    color:#d8e6ff;
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+.recharge-note{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 16px;
+    border-radius:30px;
+    background:rgba(0,212,255,.08);
+    border:1px solid rgba(0,212,255,.2);
+    color:#00d4ff;
+    font-size:13px;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+    .recharge-section{
+        padding:70px 20px;
+    }
+
+    .recharge-grid{
+        grid-template-columns:1fr;
+    }
+
+    .recharge-card{
+        padding:32px 25px;
+    }
+
+}
 /*==============================
 AREA
 ===============================*/
@@ -670,6 +763,77 @@ Broadband <span>Partners</span>
 <p class="note" style="text-align:center;">
 * Airtel Fibre and Jio Fibre connections are available only in selected locations.
 </p>
+
+</section>
+<!-- =========================
+RECHARGE OPTIONS
+========================== -->
+
+<section class="recharge-section">
+
+<h2 class="section-title">
+Recharge <span>Options</span>
+</h2>
+
+<div class="recharge-intro">
+
+<p>
+Choose the recharge method that is most convenient for you.
+Haripal Cable TV Network provides both online and offline
+recharge options for broadband customers.
+</p>
+
+</div>
+
+<div class="recharge-grid">
+
+<!-- ONLINE RECHARGE -->
+
+<div class="recharge-card">
+
+<div class="recharge-icon">
+<i class="fas fa-globe"></i>
+</div>
+
+<h3>Online Recharge</h3>
+
+<p>
+Recharge your broadband connection online through
+your respective broadband provider's official website.
+</p>
+
+<span class="recharge-note">
+<i class="fas fa-circle-check"></i>
+Online Recharge Available
+</span>
+
+</div>
+
+
+<!-- OFFLINE RECHARGE -->
+
+<div class="recharge-card">
+
+<div class="recharge-icon">
+<i class="fas fa-store"></i>
+</div>
+
+<h3>Offline Recharge</h3>
+
+<p>
+Prefer to recharge offline?
+You can recharge your broadband connection directly
+through Haripal Cable TV Network.
+</p>
+
+<span class="recharge-note">
+<i class="fas fa-circle-check"></i>
+Recharge Through Us
+</span>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1300,6 +1464,90 @@ background:#3b82f6;
 border-radius:50px;
 
 }
+/* ==========================================
+   PREMIUM TEXT LOGO
+========================================== */
+
+.logo{
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    position:relative;
+    cursor:pointer;
+}
+
+.logo div{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+
+.logo h2{
+    margin:0;
+    font-size:21px;
+    font-weight:700;
+    letter-spacing:-.4px;
+    color:#2563eb;
+    line-height:1.2;
+    transition:
+        color .4s ease,
+        letter-spacing .4s ease,
+        text-shadow .4s ease,
+        transform .4s ease;
+}
+
+.logo span{
+    font-size:12px;
+    font-weight:400;
+    color:#64748b;
+    letter-spacing:.2px;
+    transition:
+        color .4s ease,
+        letter-spacing .4s ease;
+}
+
+/* Cinematic hover */
+
+.logo:hover h2{
+    color:#1d4ed8;
+    letter-spacing:.2px;
+    transform:translateY(-1px);
+
+    text-shadow:
+        0 0 8px rgba(37,99,235,.25),
+        0 0 20px rgba(37,99,235,.15);
+}
+
+.logo:hover span{
+    color:#2563eb;
+    letter-spacing:.5px;
+}
+
+/* Small cinematic glow line */
+
+.logo::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #2563eb,
+            #00d4ff,
+            transparent
+        );
+
+    transition:width .5s ease;
+}
+
+.logo:hover::after{
+    width:100%;
+}
 /*==============================
 FLOATING BUTTONS
 ==============================*/
@@ -1417,18 +1665,7 @@ RESPONSIVE
     font-size:30px;
 }
 
-.logo h2{
-    font-size:18px;
-}
 
-.logo span{
-    font-size:11px;
-}
-
-.logo img{
-    width:55px;
-    height:55px;
-}
 
 }
 @media (max-width: 992px){
@@ -1464,13 +1701,7 @@ font-size:48px;
 }
 @media (max-width:768px){
 
-.logo h2{
-font-size:18px;
-}
 
-.logo span{
-font-size:11px;
-}
 
 .contact-hero{
 padding:140px 20px 80px;
@@ -1540,13 +1771,7 @@ font-size:28px;
 font-size:15px;
 }
 
-.logo img{
-width:45px;
-}
 
-.logo h2{
-font-size:16px;
-}
 
 .navbar{
 padding:12px;
@@ -1564,6 +1789,21 @@ height:90px;
 font-size:36px;
 }
 
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .theme-toggle {
+
+        width:44px !important;
+        height:44px !important;
+
+        font-size:22px !important;
+
+    }
+
+}
 }
 </style>
 
@@ -1866,6 +2106,6 @@ link.classList.add("active");
 });
 
 </script>
-
+<script src="site-settings.js"></script>
 </body>
 </html>

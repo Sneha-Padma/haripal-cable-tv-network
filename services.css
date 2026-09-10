@@ -1,6 +1,15 @@
+/* ==========================================
+   SERVICES PAGE
+========================================== */
+
 body{
     background:#f8fafc;
 }
+
+
+/* ==========================================
+   PAGE TITLE
+========================================== */
 
 .page-title{
     margin-top:120px;
@@ -16,4 +25,154 @@ body{
 .page-title p{
     margin-top:15px;
     color:#64748b;
+}
+
+
+/* ==========================================
+   PREMIUM TEXT LOGO
+   Same branding as index.html / team.html
+========================================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    position:relative;
+    cursor:pointer;
+}
+
+.logo div{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+
+.logo h2{
+    margin:0;
+
+    font-size:21px;
+    font-weight:700;
+
+    line-height:1.2;
+    letter-spacing:-.4px;
+
+    color:#2563eb;
+
+    transition:
+        color .4s ease,
+        letter-spacing .4s ease,
+        text-shadow .4s ease,
+        transform .4s ease;
+}
+
+.logo span{
+    font-size:12px;
+    font-weight:400;
+
+    line-height:1.3;
+
+    color:#64748b;
+
+    letter-spacing:.2px;
+
+    transition:
+        color .4s ease,
+        letter-spacing .4s ease;
+}
+
+
+/* ==========================================
+   CINEMATIC LOGO HOVER
+========================================== */
+
+.logo:hover h2{
+    color:#1d4ed8;
+
+    letter-spacing:.2px;
+
+    transform:translateY(-1px);
+
+    text-shadow:
+        0 0 8px rgba(37,99,235,.25),
+        0 0 20px rgba(37,99,235,.15);
+}
+
+.logo:hover span{
+    color:#2563eb;
+
+    letter-spacing:.5px;
+}
+
+
+/* Animated underline */
+
+.logo::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-7px;
+
+    width:0;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #2563eb,
+            #00d4ff,
+            transparent
+        );
+
+    transition:width .5s ease;
+}
+
+.logo:hover::after{
+    width:100%;
+}
+
+
+/* ==========================================
+   RESPONSIVE LOGO
+========================================== */
+
+@media(max-width:768px){
+
+    .logo h2{
+        font-size:18px;
+    }
+
+    .logo span{
+        font-size:10px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .logo h2{
+        font-size:16px;
+    }
+
+    .logo span{
+        font-size:9px;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .theme-toggle {
+
+        width:44px !important;
+        height:44px !important;
+
+        font-size:22px !important;
+
+    }
+
 }

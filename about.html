@@ -10,1098 +10,2093 @@
 
 <link rel="icon" href="images/HCN.jpg">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
-rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
 
-/*====================================
-RESET
-====================================*/
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-background:#f5f9ff;
-color:#1e293b;
-overflow-x:hidden;
-line-height:1.7;
+    background:#f4f8fc;
+    color:#1e293b;
+    overflow-x:hidden;
+    line-height:1.7;
 }
 
 img{
-display:block;
-max-width:100%;
+    display:block;
+    max-width:100%;
 }
 
 a{
-text-decoration:none;
+    text-decoration:none;
 }
 
 section{
-padding:90px 0;
+    padding:90px 0;
 }
 
 .container{
-width:min(1200px,92%);
-margin:auto;
+    width:min(1200px,92%);
+    margin:auto;
 }
 
-/*====================================
-HEADER
-====================================*/
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#fff;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-z-index:999;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(18px);
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    z-index:9999;
+    transition:.4s ease;
 }
 
 .navbar{
-width:min(1300px,95%);
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:16px 0;
+    width:min(1300px,95%);
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 0;
 }
+
+
+/* =========================================================
+   PREMIUM COMPANY LOGO
+   SAME STYLE AS GALLERY PAGE
+========================================================= */
 
 .logo{
-display:flex;
-align-items:center;
-gap:15px;
+    display:flex;
+    align-items:center;
+
+    text-decoration:none;
+
+    position:relative;
+
+    cursor:pointer;
 }
 
-.logo img{
-width:58px;
-border-radius:12px;
+
+/* Logo text container */
+
+.logo div{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
 }
+
+
+/* Main company name */
 
 .logo h2{
-font-size:23px;
-color:#2563eb;
-font-weight:700;
+    margin:0;
+
+    font-size:21px;
+    font-weight:700;
+
+    line-height:1.2;
+
+    letter-spacing:-.4px;
+
+    color:#2563eb;
+
+    transition:
+        color .4s ease,
+        letter-spacing .4s ease,
+        text-shadow .4s ease,
+        transform .4s ease;
 }
+
+
+/* Tagline */
 
 .logo span{
-font-size:13px;
-color:#64748b;
+    font-size:12px;
+
+    font-weight:400;
+
+    line-height:1.3;
+
+    color:#64748b;
+
+    letter-spacing:.2px;
+
+    transition:
+        color .4s ease,
+        letter-spacing .4s ease;
 }
 
+
+/* =========================================================
+   CINEMATIC LOGO HOVER
+========================================================= */
+
+.logo:hover h2{
+    color:#1d4ed8;
+
+    letter-spacing:.2px;
+
+    transform:translateY(-1px);
+
+    text-shadow:
+        0 0 8px rgba(37,99,235,.25),
+        0 0 20px rgba(37,99,235,.15);
+}
+
+.logo:hover span{
+    color:#2563eb;
+
+    letter-spacing:.5px;
+}
+
+
+/* Animated cinematic underline */
+
+.logo::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-7px;
+
+    width:0;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #2563eb,
+            #00d4ff,
+            transparent
+        );
+
+    transition:width .5s ease;
+}
+
+.logo:hover::after{
+    width:100%;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 .nav-links{
-display:flex;
-gap:28px;
-list-style:none;
+    display:flex;
+    align-items:center;
+    gap:28px;
+
+    list-style:none;
 }
 
 .nav-links a{
-color:#334155;
-font-weight:500;
-transition:.3s;
-position:relative;
+    color:#334155;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s ease;
 }
 
 .nav-links a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-6px;
-width:0;
-height:2px;
-background:#2563eb;
-transition:.3s;
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #00d4ff
+        );
+
+    transition:.35s ease;
 }
 
 .nav-links a:hover{
-color:#2563eb;
+    color:#2563eb;
 }
 
 .nav-links a:hover::after{
-width:100%;
+    width:100%;
 }
+
+
+/* Active About page */
+
+.nav-links a.active{
+    color:#2563eb;
+    font-weight:700;
+}
+
+.nav-links a.active::after{
+    width:100%;
+}
+
+
+/* Facebook */
+
+.nav-links .facebook-link{
+    font-size:19px;
+}
+
+.nav-links .facebook-link::after{
+    display:none;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 .menu-toggle{
-display:none;
-font-size:28px;
-cursor:pointer;
+    display:none;
+
+    font-size:28px;
+
+    color:#2563eb;
+
+    cursor:pointer;
+
+    transition:.3s ease;
 }
 
-/*====================================
-HERO
-====================================*/
+.menu-toggle:hover{
+    transform:scale(1.1);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:130px 20px 80px;
 
-background:
-linear-gradient(rgba(5,15,40,.65),rgba(5,15,40,.65)),
-url(images/photo_2026-07-22_14-08-36.jpg);
+    min-height:100vh;
 
-background-size:cover;
-background-position:center;
-position:relative;
-overflow:hidden;
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:140px 20px 90px;
+
+    background:
+
+        linear-gradient(
+            rgba(5,15,40,.70),
+            rgba(5,15,40,.78)
+        ),
+
+        url("images/photo_2026-07-22_14-08-36.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
+
+/* Cinematic glow */
+
 .hero::before{
-content:"";
-position:absolute;
-width:650px;
-height:650px;
-border-radius:50%;
-background:rgba(255,255,255,.05);
-top:-220px;
-right:-170px;
-animation:rotateGlow 20s linear infinite;
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,99,235,.22),
+            transparent 70%
+        );
+
+    top:-250px;
+    right:-200px;
+
+    animation:
+        heroGlow 12s ease-in-out infinite alternate;
 }
 
 .hero::after{
-content:"";
-position:absolute;
-width:420px;
-height:420px;
-border-radius:50%;
-background:rgba(255,255,255,.05);
-bottom:-180px;
-left:-120px;
-animation:rotateGlow 15s linear infinite reverse;
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,212,255,.12),
+            transparent 70%
+        );
+
+    bottom:-250px;
+    left:-180px;
+
+    animation:
+        heroGlow 15s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes rotateGlow{
 
-from{
-transform:rotate(0);
+@keyframes heroGlow{
+
+    0%{
+        transform:scale(1) rotate(0deg);
+        opacity:.5;
+    }
+
+    100%{
+        transform:scale(1.15) rotate(20deg);
+        opacity:1;
+    }
+
 }
 
-to{
-transform:rotate(360deg);
-}
 
-}
+/* Hero content */
 
 .hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:950px;
 }
+
+
+/* Hero badge */
+
+.hero-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    margin-bottom:25px;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:40px;
+
+    font-size:14px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.15);
+}
+
+.hero-tag i{
+    color:#ffd84d;
+}
+
+
+/* Hero title */
 
 .hero h1{
-font-size:58px;
-color:#fff;
-margin-bottom:20px;
-font-weight:700;
+
+    font-size:60px;
+
+    color:#fff;
+
+    margin-bottom:22px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    text-shadow:
+        0 5px 25px rgba(0,0,0,.35);
 }
+
+
+/* Hero paragraph */
 
 .hero p{
-font-size:20px;
-color:#e2e8f0;
+
+    font-size:19px;
+
+    color:#e2e8f0;
+
+    max-width:850px;
+
+    margin:auto;
+
+    line-height:1.9;
 }
 
-/*====================================
-SECTION TITLE
-====================================*/
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:35px;
+
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:15px 32px;
+
+    background:#0f62fe;
+
+    color:#fff;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    box-shadow:
+        0 15px 35px rgba(15,98,254,.35);
+
+    transition:.35s ease;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    background:#004fd6;
+
+    box-shadow:
+        0 20px 45px rgba(15,98,254,.45);
+}
+
+.btn-outline{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:14px 30px;
+
+    border:2px solid rgba(255,255,255,.85);
+
+    color:#fff;
+
+    border-radius:40px;
+
+    transition:.35s ease;
+}
+
+.btn-outline:hover{
+
+    background:#fff;
+
+    color:#0f62fe;
+
+    transform:translateY(-5px);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .section-title{
-text-align:center;
-margin-bottom:60px;
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.section-title span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    margin-bottom:15px;
+
+    background:#dcecff;
+
+    color:#0f62fe;
+
+    font-weight:600;
+
+    border-radius:30px;
+
+    font-size:14px;
 }
 
 .section-title h2{
-font-size:42px;
-color:#0f172a;
-margin-bottom:15px;
+
+    font-size:42px;
+
+    color:#0f2f63;
+
+    margin-bottom:15px;
 }
 
 .section-title p{
-color:#64748b;
-max-width:700px;
-margin:auto;
+
+    color:#64748b;
+
+    max-width:720px;
+
+    margin:auto;
+
+    line-height:1.8;
 }
 
-/*====================================
-GLASS CARD
-====================================*/
+
+/* =========================================================
+   OUR STORY
+========================================================= */
+
+.story-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        1.15fr
+        .85fr;
+
+    gap:35px;
+
+    align-items:stretch;
+}
+
 
 .glass{
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.35);
-border-radius:28px;
-padding:45px;
-box-shadow:0 20px 60px rgba(0,0,0,.08);
-transition:.4s;
+
+    background:
+        rgba(255,255,255,.78);
+
+    backdrop-filter:blur(18px);
+
+    border:
+        1px solid rgba(255,255,255,.6);
+
+    border-radius:28px;
+
+    padding:45px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+    transition:.4s ease;
 }
 
 .glass:hover{
-transform:translateY(-10px);
-box-shadow:0 30px 60px rgba(37,99,235,.18);
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 30px 65px rgba(37,99,235,.16);
 }
 
 .glass h2{
-color:#2563eb;
-margin-bottom:18px;
+
+    color:#2563eb;
+
+    margin-bottom:18px;
+
+    font-size:30px;
 }
 
 .glass p{
-font-size:17px;
-color:#475569;
-line-height:2;
+
+    font-size:16px;
+
+    color:#475569;
+
+    line-height:1.95;
+
+    margin-bottom:18px;
 }
-/*====================================
-MISSION & VISION
-====================================*/
+
+.glass p:last-child{
+    margin-bottom:0;
+}
+
+
+/* Story highlight */
+
+.story-highlight{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    padding:45px;
+
+    color:#fff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #001f4d,
+            #004aad,
+            #0f62fe
+        );
+
+    box-shadow:
+        0 25px 60px rgba(0,54,130,.22);
+}
+
+.story-highlight::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-120px;
+    right:-80px;
+}
+
+.story-highlight::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:200px;
+    height:200px;
+
+    border-radius:50%;
+
+    background:rgba(0,212,255,.10);
+
+    bottom:-100px;
+    left:-70px;
+}
+
+.story-highlight>*{
+    position:relative;
+    z-index:2;
+}
+
+.story-highlight i{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+    color:#7dd3fc;
+}
+
+.story-highlight h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+.story-highlight p{
+
+    color:#dbeafe;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   MISSION & VISION
+========================================================= */
 
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
-margin-top:45px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:35px;
 }
 
 .card{
-background:#fff;
-padding:40px 35px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 15px 45px rgba(0,0,0,.08);
-transition:.4s;
-position:relative;
-overflow:hidden;
+
+    background:#fff;
+
+    padding:45px 35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.08);
+
+    transition:.4s ease;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
 .card::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.45),
-transparent
-);
-transition:.8s;
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.55),
+            transparent
+        );
+
+    transition:.8s ease;
 }
 
 .card:hover::before{
-left:100%;
+    left:100%;
 }
 
 .card:hover{
-transform:translateY(-12px);
-box-shadow:0 25px 55px rgba(37,99,235,.18);
+
+    transform:translateY(-12px);
+
+    box-shadow:
+        0 25px 60px rgba(37,99,235,.18);
 }
 
 .card i{
-font-size:60px;
-color:#2563eb;
-margin-bottom:20px;
+
+    font-size:58px;
+
+    color:#2563eb;
+
+    margin-bottom:22px;
 }
 
 .card h3{
-font-size:28px;
-margin-bottom:15px;
-color:#0f172a;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+    color:#0f172a;
 }
 
 .card p{
-color:#64748b;
-line-height:1.9;
+
+    color:#64748b;
+
+    line-height:1.9;
 }
 
-/*====================================
-FEATURES
-====================================*/
+
+/* =========================================================
+   WHY CHOOSE US
+========================================================= */
 
 .features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:28px;
 }
 
 .feature{
-background:#fff;
-padding:35px;
-border-radius:22px;
-text-align:center;
-box-shadow:0 15px 45px rgba(0,0,0,.08);
-transition:.35s;
-position:relative;
-overflow:hidden;
+
+    background:#fff;
+
+    padding:35px 25px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.08);
+
+    transition:.4s ease;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
 .feature::before{
-content:"";
-position:absolute;
-left:-100%;
-top:0;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.45),
-transparent
-);
-transition:.8s;
+
+    content:"";
+
+    position:absolute;
+
+    left:-100%;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.5),
+            transparent
+        );
+
+    transition:.8s ease;
 }
 
 .feature:hover::before{
-left:100%;
+    left:100%;
 }
 
 .feature:hover{
-transform:translateY(-10px);
-box-shadow:0 22px 55px rgba(37,99,235,.18);
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 25px 55px rgba(37,99,235,.18);
 }
 
 .feature i{
-font-size:50px;
-color:#2563eb;
-margin-bottom:18px;
+
+    font-size:48px;
+
+    color:#2563eb;
+
+    margin-bottom:18px;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .feature h3{
-margin-bottom:12px;
-font-size:22px;
+
+    margin-bottom:12px;
+
+    font-size:21px;
+
+    color:#0f172a;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .feature p{
-color:#64748b;
-line-height:1.8;
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-/*====================================
-ACHIEVEMENTS
-====================================*/
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .theme-toggle {
+
+        width:44px !important;
+        height:44px !important;
+
+        font-size:22px !important;
+
+    }
+
+}
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievement-section{
+
+    background:#fff;
+}
 
 .counter-box{
-text-align:center;
+
+    padding:38px 20px;
 }
 
 .counter{
-font-size:55px;
-font-weight:700;
-color:#2563eb;
-margin:12px 0;
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+    margin:10px 0;
 }
 
-/*====================================
-TIMELINE
-====================================*/
+
+/* =========================================================
+   JOURNEY / TIMELINE
+========================================================= */
 
 .timeline{
-position:relative;
-margin-top:50px;
-padding-left:45px;
+
+    position:relative;
+
+    margin-top:50px;
+
+    padding-left:50px;
 }
 
 .timeline::before{
-content:"";
-position:absolute;
-left:18px;
-top:0;
-bottom:0;
-width:4px;
-background:#2563eb;
-border-radius:20px;
+
+    content:"";
+
+    position:absolute;
+
+    left:20px;
+
+    top:0;
+    bottom:0;
+
+    width:4px;
+
+    background:
+        linear-gradient(
+            #2563eb,
+            #00bde8,
+            #2563eb
+        );
+
+    border-radius:20px;
 }
 
 .timeline-item{
-position:relative;
-margin-bottom:40px;
-background:#fff;
-padding:30px 35px;
-border-radius:22px;
-box-shadow:0 15px 45px rgba(0,0,0,.08);
-transition:.35s;
+
+    position:relative;
+
+    margin-bottom:40px;
+
+    background:#fff;
+
+    padding:32px 38px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.08);
+
+    transition:.4s ease;
+}
+
+.timeline-item:last-child{
+    margin-bottom:0;
 }
 
 .timeline-item::before{
-content:"";
-position:absolute;
-left:-39px;
-top:32px;
-width:22px;
-height:22px;
-border-radius:50%;
-background:#2563eb;
-border:5px solid #fff;
-box-shadow:0 0 18px rgba(37,99,235,.35);
+
+    content:"";
+
+    position:absolute;
+
+    left:-42px;
+
+    top:34px;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    border:5px solid #fff;
+
+    box-shadow:
+        0 0 20px rgba(37,99,235,.4);
 }
 
 .timeline-item:hover{
-transform:translateX(12px);
-box-shadow:0 22px 55px rgba(37,99,235,.18);
+
+    transform:translateX(10px);
+
+    box-shadow:
+        0 22px 55px rgba(37,99,235,.18);
 }
 
 .timeline-item h3{
-color:#2563eb;
-font-size:30px;
-margin-bottom:12px;
+
+    color:#2563eb;
+
+    font-size:30px;
+
+    margin-bottom:12px;
 }
 
 .timeline-item p{
-color:#64748b;
-line-height:1.9;
+
+    color:#64748b;
+
+    line-height:1.9;
 }
 
-/*====================================
-CALL TO ACTION
-====================================*/
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
-background:linear-gradient(135deg,#2563eb,#0f172a);
-color:#fff;
-padding:110px 20px;
-text-align:center;
-position:relative;
-overflow:hidden;
+
+    margin:0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #001f4d 0%,
+            #004aad 50%,
+            #0f62fe 100%
+        );
+
+    color:#fff;
+
+    padding:110px 20px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
 .cta::before{
-content:"";
-position:absolute;
-width:520px;
-height:520px;
-border-radius:50%;
-background:rgba(255,255,255,.05);
-top:-220px;
-right:-180px;
-animation:rotateGlow 18s linear infinite;
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+    height:520px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    top:-220px;
+    right:-180px;
+
+    animation:
+        rotateGlow 18s linear infinite;
 }
 
 .cta::after{
-content:"";
-position:absolute;
-width:350px;
-height:350px;
-border-radius:50%;
-background:rgba(255,255,255,.05);
-bottom:-150px;
-left:-120px;
-animation:rotateGlow 12s linear infinite reverse;
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    bottom:-150px;
+    left:-120px;
+
+    animation:
+        rotateGlow 12s linear infinite reverse;
+}
+
+.cta .container{
+    position:relative;
+    z-index:2;
 }
 
 .cta h2{
-position:relative;
-z-index:2;
-font-size:48px;
-margin-bottom:20px;
+
+    font-size:48px;
+
+    margin-bottom:20px;
 }
 
 .cta p{
-position:relative;
-z-index:2;
-max-width:820px;
-margin:auto;
-font-size:19px;
-line-height:1.9;
-color:#e2e8f0;
-margin-bottom:40px;
+
+    max-width:820px;
+
+    margin:
+        0 auto 40px;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#dbeafe;
 }
 
 .cta a{
-position:relative;
-z-index:2;
-display:inline-block;
-padding:18px 42px;
-background:#fff;
-color:#2563eb;
-border-radius:50px;
-font-weight:600;
-transition:.35s;
-box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:17px 40px;
+
+    background:#fff;
+
+    color:#2563eb;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18);
+
+    transition:.35s ease;
 }
 
 .cta a:hover{
-background:#2563eb;
-color:#fff;
-transform:translateY(-8px);
+
+    background:#2563eb;
+
+    color:#fff;
+
+    transform:translateY(-7px);
 }
 
-/*====================================
-FOOTER
-====================================*/
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-background:#08111f;
-color:#cbd5e1;
-padding:50px 20px;
-text-align:center;
+
+    background:#08111f;
+
+    color:#cbd5e1;
+
+    padding:50px 20px;
+
+    text-align:center;
 }
 
 footer p{
-font-size:16px;
-line-height:1.8;
-}
-/*====================================
-TABLET RESPONSIVE
-====================================*/
-
-@media (max-width:992px){
-
-.navbar{
-padding:15px 20px;
-}
-
-.logo img{
-width:50px;
-}
-
-.logo h2{
-font-size:20px;
-}
-
-.logo span{
-font-size:12px;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.section-title h2{
-font-size:36px;
-}
-
-.glass{
-padding:35px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.features{
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-}
-
-.card{
-padding:35px 30px;
-}
-
-.feature{
-padding:30px;
-}
-
-.timeline{
-padding-left:35px;
-}
-
-.timeline::before{
-left:15px;
-}
-
-.timeline-item::before{
-left:-34px;
-}
-
-.cta h2{
-font-size:40px;
-}
-
-.cta p{
-font-size:18px;
-}
-
-}
-
-
-/*====================================
-MOBILE MENU
-====================================*/
-
-@media (max-width:900px){
-
-.menu-toggle{
-display:block;
-font-size:30px;
-color:#2563eb;
-}
-
-.nav-links{
-position:fixed;
-top:88px;
-right:-100%;
-width:280px;
-height:100vh;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(18px);
-flex-direction:column;
-padding:45px 30px;
-gap:22px;
-transition:.4s;
-box-shadow:-8px 0 25px rgba(0,0,0,.08);
-}
-
-.nav-links.active{
-right:0;
-}
-
-}
-
-
-/*====================================
-MOBILE
-====================================*/
-
-@media (max-width:768px){
-
-section{
-padding:70px 0;
-}
-
-.hero{
-padding:140px 20px 80px;
-}
-
-.hero h1{
-font-size:38px;
-line-height:1.3;
-}
-
-.hero p{
-font-size:17px;
-}
-
-.section-title{
-margin-bottom:45px;
-}
-
-.section-title h2{
-font-size:30px;
-}
-
-.section-title p{
-font-size:15px;
-}
-
-.glass{
-padding:25px;
-border-radius:20px;
-}
 
-.glass h2{
-font-size:28px;
-}
-
-.glass p{
-font-size:15px;
-line-height:1.9;
-}
-
-.grid{
-gap:25px;
-}
-
-.card{
-padding:30px 25px;
-}
-
-.card i{
-font-size:48px;
-}
-
-.card h3{
-font-size:24px;
-}
-
-.features{
-grid-template-columns:1fr;
-}
-
-.feature{
-padding:30px 25px;
-}
-
-.counter{
-font-size:42px;
-}
-
-.timeline{
-padding-left:28px;
-}
-
-.timeline::before{
-left:12px;
-}
-
-.timeline-item{
-padding:25px;
-}
-
-.timeline-item::before{
-width:18px;
-height:18px;
-left:-28px;
-}
-
-.timeline-item h3{
-font-size:24px;
-}
-
-.cta{
-padding:80px 20px;
-}
-
-.cta h2{
-font-size:34px;
-}
-
-.cta p{
-font-size:16px;
-}
-
-.cta a{
-width:100%;
-max-width:300px;
-padding:16px;
-}
-
-}
-
-
-/*====================================
-SMALL PHONES
-====================================*/
-
-@media (max-width:480px){
-
-.logo img{
-width:42px;
-}
-
-.logo h2{
-font-size:16px;
-}
-
-.logo span{
-display:none;
-}
-
-.navbar{
-padding:12px 15px;
-}
-
-.hero h1{
-font-size:30px;
-}
-
-.hero p{
-font-size:15px;
-}
-
-.section-title h2{
-font-size:26px;
-}
-
-.glass{
-padding:22px;
-}
-
-.card{
-padding:25px 20px;
-}
-
-.feature{
-padding:25px 20px;
-}
-
-.timeline-item{
-padding:22px;
-}
-
-.counter{
-font-size:38px;
-}
-
-.cta h2{
-font-size:28px;
-}
-
-footer{
-padding:40px 15px;
-}
+    font-size:15px;
 
-footer p{
-font-size:14px;
+    line-height:1.8;
 }
 
+footer strong{
+    color:#fff;
 }
 
 
-/*====================================
-AOS IMPROVEMENTS
-====================================*/
+/* =========================================================
+   SCROLL / AOS
+========================================================= */
 
 [data-aos]{
-transition-duration:900ms !important;
+    transition-duration:900ms !important;
 }
-</style>
-</head>
-<body>
 
-<!-- ================= HEADER ================= -->
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1100px){
+
+    .features{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .story-layout{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* =========================================================
+   NAV MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:82px;
+
+        right:-100%;
+
+        width:280px;
+
+        height:calc(100vh - 82px);
+
+        background:
+            rgba(255,255,255,.97);
+
+        backdrop-filter:blur(20px);
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:40px 30px;
+
+        gap:22px;
+
+        box-shadow:
+            -10px 0 35px rgba(0,0,0,.10);
+
+        transition:.45s ease;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:768px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .hero{
+
+        min-height:90vh;
+
+        padding:
+            130px
+            20px
+            80px;
+
+        background-attachment:scroll;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn-primary,
+    .btn-outline{
+        width:100%;
+        max-width:300px;
+    }
+
+    .section-title{
+        margin-bottom:45px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .section-title p{
+        font-size:15px;
+    }
+
+    .glass{
+        padding:30px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        padding:30px 25px;
+    }
+
+    .counter{
+        font-size:44px;
+    }
+
+    .timeline{
+        padding-left:35px;
+    }
+
+    .timeline::before{
+        left:13px;
+    }
+
+    .timeline-item{
+        padding:26px;
+    }
+
+    .timeline-item::before{
+        left:-30px;
+        width:18px;
+        height:18px;
+    }
+
+    .timeline-item h3{
+        font-size:25px;
+    }
+
+    .cta{
+        padding:80px 20px;
+    }
+
+    .cta h2{
+        font-size:36px;
+    }
+
+    .cta p{
+        font-size:16px;
+    }
+
+    .cta a{
+        width:100%;
+        max-width:300px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE LOGO
+========================================================= */
+
+@media(max-width:768px){
+
+    .logo h2{
+        font-size:18px;
+    }
+
+    .logo span{
+        font-size:10px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .logo h2{
+        font-size:16px;
+    }
+
+    .logo span{
+        font-size:9px;
+    }
+
+    .navbar{
+        padding:12px 15px;
+    }
+
+    .hero{
+        min-height:85vh;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-tag{
+        font-size:12px;
+        padding:8px 16px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .glass{
+        padding:24px;
+    }
+
+    .glass h2{
+        font-size:26px;
+    }
+
+    .glass p{
+        font-size:15px;
+    }
+
+    .story-highlight{
+        padding:30px;
+    }
+
+    .story-highlight h3{
+        font-size:25px;
+    }
+
+    .card{
+        padding:30px 22px;
+    }
+
+    .card i{
+        font-size:48px;
+    }
+
+    .card h3{
+        font-size:24px;
+    }
+
+    .feature{
+        padding:28px 22px;
+    }
+
+    .timeline{
+        padding-left:28px;
+    }
+
+    .timeline::before{
+        left:10px;
+    }
+
+    .timeline-item{
+        padding:22px;
+    }
+
+    .timeline-item::before{
+        left:-27px;
+        width:16px;
+        height:16px;
+        border-width:4px;
+    }
+
+    .timeline-item h3{
+        font-size:23px;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
+
+    footer{
+        padding:40px 15px;
+    }
+
+    footer p{
+        font-size:14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="about-page">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
 <nav class="navbar">
 
+
+<!-- PREMIUM LOGO -->
+
 <a href="index.html" class="logo">
 
-<img src="images/HCN.jpg" alt="Haripal Cable TV Network Logo">
+    <div>
 
-<div>
-<h2>Haripal Cable TV Network</h2>
-<span>Your Trusted Broadband & Cable Service</span>
-</div>
+        <h2>Haripal Cable TV Network</h2>
+
+        <span data-i18n="nav.tagline">Your Trusted Broadband & Cable Service</span>
+
+    </div>
 
 </a>
 
+
+<!-- NAVIGATION -->
+
 <ul class="nav-links">
 
-<li><a href="index.html#feeds">Feeds</a></li>
+    <li>
+        <a href="index.html#feeds">
+            Feeds
+        </a>
+    </li>
 
-<li><a href="services.html">Services</a></li>
+    <li>
+        <a href="services.html">
+            Services
+        </a>
+    </li>
 
-<li><a href="gallery.html">Gallery</a></li>
+    <li>
+        <a href="gallery.html">
+            Gallery
+        </a>
+    </li>
 
-<li><a href="team.html">We Are</a></li>
+    <li>
+        <a href="team.html">
+            We Are
+        </a>
+    </li>
 
-<li><a href="about.html">About</a></li>
+    <li>
+        <a href="about.html" class="active">
+            About Us
+        </a>
+    </li>
 
-<li><a href="contact.html">Contact</a></li>
+    <li>
+        <a href="contact.html">
+            Contact
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.facebook.com/profile.php?id=61586978473232"
+            target="_blank"
+            class="facebook-link"
+            aria-label="Facebook"
+        >
+            <i class="fab fa-facebook"></i>
+        </a>
+    </li>
 
 </ul>
 
-<div class="menu-toggle">
-<i class="fas fa-bars"></i>
+
+<!-- MOBILE MENU -->
+ <div class="site-controls">
+
+
+
+
+    <button
+    type="button"
+    class="theme-toggle"
+    aria-label="Switch to Night Mode"
+    title="Night Mode">
+
+    🌙
+
+</button>
+
 </div>
+
+<div class="menu-toggle">
+
+    <i class="fas fa-bars"></i>
+
+</div>
+
 
 </nav>
 
 </header>
 
-<!-- ================= HERO ================= -->
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
 <div class="hero-content" data-aos="zoom-in">
 
-<h1>About Haripal Cable TV Network</h1>
 
-<p>
+    <span class="hero-tag">
 
-Connecting Homes, Empowering Businesses and Delivering Reliable Broadband & Cable TV Services with Trust, Innovation and Outstanding Customer Support.
+        <i class="fa-solid fa-building"></i>
 
-</p>
+        Haripal Cable TV Network
 
-</div>
+    </span>
 
-</section>
 
-<!-- ================= WHO WE ARE ================= -->
+    <h1>
+        About Haripal Cable TV Network
+    </h1>
 
-<section>
 
-<div class="container">
+    <p>
 
-<div class="section-title" data-aos="fade-up">
+        Connecting Homes, Empowering Businesses and
+        Delivering Reliable Broadband & Cable TV Services
+        with Trust, Innovation and Outstanding Customer Support.
 
-<h2>Who We Are</h2>
+    </p>
 
-<p>
 
-Building strong customer relationships through reliable Cable TV and High-Speed Broadband services.
+    <div class="hero-buttons">
 
-</p>
+        <a href="#story" class="btn-primary">
 
-</div>
+            Discover Our Story
 
-<div class="glass" data-aos="fade-right">
+            <i class="fas fa-arrow-down"></i>
 
-<h2>Our Story</h2>
+        </a>
 
-<p>
 
-Haripal Cable TV Network has proudly served the Haripal community for decades by delivering dependable Cable TV and Broadband Internet services. Our commitment has always been to provide uninterrupted connectivity, premium entertainment, affordable pricing, and prompt customer support.
+        <a href="index.html#feeds" class="btn-outline">
 
-</p>
+            <i class="fas fa-arrow-left"></i>
 
-<br>
+            Back to Feeds
 
-<p>
+        </a>
 
-Through continuous upgrades in technology and a customer-first approach, we have earned the trust of thousands of families and businesses. Every connection we provide reflects our dedication to quality, honesty, and long-term service excellence.
+    </div>
 
-</p>
-
-</div>
 
 </div>
 
 </section>
 
-<!-- ================= MISSION & VISION ================= -->
+
+
+<!-- =====================================================
+     OUR STORY
+===================================================== -->
+
+<section id="story">
+
+<div class="container">
+
+
+<div class="section-title" data-aos="fade-up">
+
+    <span>Who We Are</span>
+
+    <h2>Built on Trust. Driven by Connectivity.</h2>
+
+    <p>
+
+        Building strong customer relationships through
+        reliable Cable TV and High-Speed Broadband services.
+
+    </p>
+
+</div>
+
+
+<div class="story-layout">
+
+
+    <!-- STORY -->
+
+    <div class="glass" data-aos="fade-right">
+
+        <h2>
+            Our Story
+        </h2>
+
+
+        <p>
+
+            Haripal Cable TV Network has proudly served
+            the Haripal community for decades by delivering
+            dependable Cable TV and Broadband Internet services.
+
+        </p>
+
+
+        <p>
+
+            Our commitment has always been to provide
+            reliable connectivity, quality entertainment,
+            affordable services and responsive customer support.
+
+        </p>
+
+
+        <p>
+
+            Through continuous upgrades in technology and
+            a customer-first approach, we continue to build
+            strong relationships with families and businesses
+            across our service area.
+
+        </p>
+
+
+        <p>
+
+            Every connection we provide reflects our dedication
+            to quality, honesty and long-term service excellence.
+
+        </p>
+
+    </div>
+
+
+    <!-- HIGHLIGHT -->
+
+    <div class="story-highlight" data-aos="fade-left">
+
+        <i class="fas fa-network-wired"></i>
+
+        <h3>
+            Connecting Communities
+        </h3>
+
+        <p>
+
+            From traditional Cable TV services to modern
+            high-speed broadband connectivity, our journey
+            continues to evolve with technology and the
+            changing needs of our customers.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MISSION & VISION
+===================================================== -->
 
 <section>
 
 <div class="container">
 
+
 <div class="section-title" data-aos="fade-up">
 
-<h2>Our Purpose</h2>
+    <span>Our Purpose</span>
 
-<p>
+    <h2>Mission & Vision</h2>
 
-Everything we do is driven by customer satisfaction, innovation, and reliable connectivity.
+    <p>
 
-</p>
+        Everything we do is driven by customer satisfaction,
+        innovation and reliable connectivity.
+
+    </p>
 
 </div>
+
 
 <div class="grid">
 
-<div class="card" data-aos="zoom-in">
 
-<i class="fas fa-bullseye"></i>
+    <!-- MISSION -->
 
-<h3>Our Mission</h3>
+    <div class="card" data-aos="zoom-in">
 
-<p>
+        <i class="fas fa-bullseye"></i>
 
-To provide reliable, affordable, and high-speed Broadband and Cable TV services while delivering excellent customer support and building lifelong relationships with every customer.
+        <h3>
+            Our Mission
+        </h3>
 
-</p>
+        <p>
 
-</div>
+            To provide reliable, affordable and high-speed
+            Broadband and Cable TV services while delivering
+            excellent customer support and building lifelong
+            relationships with every customer.
 
-<div class="card" data-aos="zoom-in" data-aos-delay="200">
+        </p>
 
-<i class="fas fa-eye"></i>
+    </div>
 
-<h3>Our Vision</h3>
 
-<p>
+    <!-- VISION -->
 
-To become the most trusted Broadband and Cable TV service provider by continuously improving technology, expanding our network, and exceeding customer expectations.
+    <div class="card"
+         data-aos="zoom-in"
+         data-aos-delay="200">
 
-</p>
+        <i class="fas fa-eye"></i>
 
-</div>
+        <h3>
+            Our Vision
+        </h3>
+
+        <p>
+
+            To become a trusted Broadband and Cable TV service
+            provider by continuously improving technology,
+            strengthening our network and exceeding customer
+            expectations.
+
+        </p>
+
+    </div>
+
 
 </div>
 
 </div>
 
 </section>
-<!-- ================= WHY CHOOSE US ================= -->
+
+
+
+<!-- =====================================================
+     WHY CHOOSE US
+===================================================== -->
 
 <section>
 
 <div class="container">
 
+
 <div class="section-title" data-aos="fade-up">
 
-<h2>Why Choose Haripal Cable TV Network?</h2>
+    <span>Why Us</span>
 
-<p>
+    <h2>
+        Why Choose Haripal Cable TV Network?
+    </h2>
 
-We combine modern technology, reliable connectivity, and excellent customer support to deliver a seamless entertainment and internet experience.
+    <p>
 
-</p>
+        We combine modern technology, reliable connectivity
+        and dedicated customer support to deliver a seamless
+        internet and entertainment experience.
+
+    </p>
 
 </div>
+
 
 <div class="features">
 
-<div class="feature" data-aos="fade-up">
 
-<i class="fas fa-wifi"></i>
+    <!-- FEATURE 1 -->
 
-<h3>High-Speed Broadband</h3>
+    <div class="feature"
+         data-aos="fade-up">
 
-<p>
+        <i class="fas fa-wifi"></i>
 
-Enjoy stable, high-speed internet with excellent uptime for work, study, gaming, and streaming.
+        <h3>
+            High-Speed Broadband
+        </h3>
 
-</p>
+        <p>
 
-</div>
+            Stable, high-speed internet designed for
+            work, study, gaming, streaming and everyday use.
 
-<div class="feature" data-aos="fade-up" data-aos-delay="100">
+        </p>
 
-<i class="fas fa-tv"></i>
+    </div>
 
-<h3>Premium Cable TV</h3>
 
-<p>
+    <!-- FEATURE 2 -->
 
-Access hundreds of quality entertainment, sports, news, and regional channels for the whole family.
+    <div class="feature"
+         data-aos="fade-up"
+         data-aos-delay="100">
 
-</p>
+        <i class="fas fa-tv"></i>
 
-</div>
+        <h3>
+            Premium Cable TV
+        </h3>
 
-<div class="feature" data-aos="fade-up" data-aos-delay="200">
+        <p>
 
-<i class="fas fa-headset"></i>
+            Quality entertainment, sports, news and
+            regional channels for the whole family.
 
-<h3>Quick Customer Support</h3>
+        </p>
 
-<p>
+    </div>
 
-Our friendly support team responds quickly to resolve technical issues and customer queries.
 
-</p>
+    <!-- FEATURE 3 -->
 
-</div>
+    <div class="feature"
+         data-aos="fade-up"
+         data-aos-delay="200">
 
-<div class="feature" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-headset"></i>
 
-<i class="fas fa-tools"></i>
+        <h3>
+            Quick Customer Support
+        </h3>
 
-<h3>Professional Installation</h3>
+        <p>
 
-<p>
+            Responsive assistance for technical issues,
+            service queries and customer requirements.
 
-Fast installation and reliable maintenance by experienced technicians.
+        </p>
 
-</p>
+    </div>
 
-</div>
+
+    <!-- FEATURE 4 -->
+
+    <div class="feature"
+         data-aos="fade-up"
+         data-aos-delay="300">
+
+        <i class="fas fa-tools"></i>
+
+        <h3>
+            Professional Installation
+        </h3>
+
+        <p>
+
+            Reliable installation and maintenance supported
+            by experienced technical service.
+
+        </p>
+
+    </div>
+
 
 </div>
 
@@ -1111,65 +2106,118 @@ Fast installation and reliable maintenance by experienced technicians.
 
 
 
-<!-- ================= ACHIEVEMENTS ================= -->
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
 
-<section>
+<section class="achievement-section">
 
 <div class="container">
 
+
 <div class="section-title" data-aos="fade-up">
 
-<h2>Our Achievements</h2>
+    <span>Our Numbers</span>
 
-<p>
+    <h2>
+        Our Achievements
+    </h2>
 
-Numbers that reflect the trust our customers have placed in us over the years.
+    <p>
 
-</p>
+        Numbers that reflect the trust and support
+        our customers have placed in us over the years.
+
+    </p>
 
 </div>
+
 
 <div class="features">
 
-<div class="feature counter-box" data-aos="zoom-in">
 
-<i class="fas fa-users"></i>
+    <!-- CUSTOMERS -->
 
-<h2 class="counter" data-target="5000">0</h2>
+    <div class="feature counter-box"
+         data-aos="zoom-in">
 
-<h3>Happy Customers</h3>
+        <i class="fas fa-users"></i>
 
-</div>
+        <h2
+            class="counter"
+            data-target="5000">
+            0
+        </h2>
 
-<div class="feature counter-box" data-aos="zoom-in" data-aos-delay="100">
+        <h3>
+            Happy Customers
+        </h3>
 
-<i class="fas fa-network-wired"></i>
+    </div>
 
-<h2 class="counter" data-target="3500">0</h2>
 
-<h3>Broadband Connections</h3>
+    <!-- BROADBAND -->
 
-</div>
+    <div class="feature counter-box"
+         data-aos="zoom-in"
+         data-aos-delay="100">
 
-<div class="feature counter-box" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-network-wired"></i>
 
-<i class="fas fa-tv"></i>
+        <h2
+            class="counter"
+            data-target="3500">
+            0
+        </h2>
 
-<h2 class="counter" data-target="4500">0</h2>
+        <h3>
+            Broadband Connections
+        </h3>
 
-<h3>Cable TV Connections</h3>
+    </div>
 
-</div>
 
-<div class="feature counter-box" data-aos="zoom-in" data-aos-delay="300">
+    <!-- CABLE -->
 
-<i class="fas fa-award"></i>
+    <div class="feature counter-box"
+         data-aos="zoom-in"
+         data-aos-delay="200">
 
-<h2 class="counter" data-target="38">0</h2>
+        <i class="fas fa-tv"></i>
 
-<h3>Years of Trusted Service</h3>
+        <h2
+            class="counter"
+            data-target="4500">
+            0
+        </h2>
 
-</div>
+        <h3>
+            Cable TV Connections
+        </h3>
+
+    </div>
+
+
+    <!-- YEARS -->
+
+    <div class="feature counter-box"
+         data-aos="zoom-in"
+         data-aos-delay="300">
+
+        <i class="fas fa-award"></i>
+
+        <h2
+            class="counter"
+            data-target="38">
+            0
+        </h2>
+
+        <h3>
+            Years of Trusted Service
+        </h3>
+
+    </div>
+
 
 </div>
 
@@ -1179,73 +2227,118 @@ Numbers that reflect the trust our customers have placed in us over the years.
 
 
 
-<!-- ================= OUR JOURNEY ================= -->
+<!-- =====================================================
+     OUR JOURNEY
+===================================================== -->
 
 <section>
 
 <div class="container">
 
+
 <div class="section-title" data-aos="fade-up">
 
-<h2>Our Journey</h2>
+    <span>Our Journey</span>
 
-<p>
+    <h2>
+        Growing With Technology
+    </h2>
 
-A journey built on trust, innovation, and continuous service improvement.
+    <p>
 
-</p>
+        A journey built on trust, innovation and
+        continuous service improvement.
+
+    </p>
 
 </div>
+
 
 <div class="timeline">
 
-<div class="timeline-item" data-aos="fade-left">
 
-<h3>1990</h3>
+    <!-- 1990 -->
 
-<p>
+    <div class="timeline-item"
+         data-aos="fade-left">
 
-Haripal Cable TV Network started its Cable TV services with the vision of bringing quality entertainment to every household.
+        <h3>
+            1990
+        </h3>
 
-</p>
+        <p>
 
-</div>
+            Haripal Cable TV Network started its Cable TV
+            services with the vision of bringing quality
+            entertainment to households in the community.
 
-<div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+        </p>
 
-<h3>2010</h3>
+    </div>
 
-<p>
 
-Expanded our network, improved customer support, and upgraded service quality across the region.
+    <!-- 2010 -->
 
-</p>
+    <div class="timeline-item"
+         data-aos="fade-left"
+         data-aos-delay="100">
 
-</div>
+        <h3>
+            2010
+        </h3>
 
-<div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+        <p>
 
-<h3>2019</h3>
+            Expanded our network, improved customer support
+            and upgraded service quality across the region.
 
-<p>
+        </p>
 
-Successfully launched High-Speed Broadband services to meet the growing demand for fast and reliable internet.
+    </div>
 
-</p>
 
-</div>
+    <!-- 2019 -->
 
-<div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+    <div class="timeline-item"
+         data-aos="fade-left"
+         data-aos-delay="200">
 
-<h3>2026</h3>
+        <h3>
+            2019
+        </h3>
 
-<p>
+        <p>
 
-Today we proudly serve thousands of satisfied customers with dependable Broadband and Cable TV solutions.
+            Successfully expanded into High-Speed Broadband
+            services to meet the growing demand for fast
+            and reliable internet connectivity.
 
-</p>
+        </p>
 
-</div>
+    </div>
+
+
+    <!-- 2026 -->
+
+    <div class="timeline-item"
+         data-aos="fade-left"
+         data-aos-delay="300">
+
+        <h3>
+            2026
+        </h3>
+
+        <p>
+
+            Today we continue serving customers with
+            dependable Broadband and Cable TV solutions,
+            supported by modern connectivity and dedicated
+            local service.
+
+        </p>
+
+    </div>
+
 
 </div>
 
@@ -1255,29 +2348,43 @@ Today we proudly serve thousands of satisfied customers with dependable Broadban
 
 
 
-<!-- ================= CALL TO ACTION ================= -->
+<!-- =====================================================
+     CALL TO ACTION
+===================================================== -->
 
 <section class="cta">
 
 <div class="container">
 
+
 <h2 data-aos="zoom-in">
 
-Ready to Experience Better Connectivity?
+    Ready to Experience Better Connectivity?
 
 </h2>
 
+
 <p data-aos="fade-up">
 
-Join Haripal Cable TV Network today and enjoy uninterrupted Broadband Internet, premium Cable TV, and dedicated customer support.
+    Join Haripal Cable TV Network and enjoy reliable
+    Broadband Internet, quality Cable TV and dedicated
+    customer support.
 
 </p>
 
-<a href="contact.html" data-aos="zoom-in" data-aos-delay="200">
 
-Contact Us Today
+<a
+    href="contact.html"
+    data-aos="zoom-in"
+    data-aos-delay="200"
+>
+
+    Contact Us Today
+
+    <i class="fas fa-arrow-right"></i>
 
 </a>
+
 
 </div>
 
@@ -1285,7 +2392,9 @@ Contact Us Today
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1293,156 +2402,288 @@ Contact Us Today
 
 <p>
 
-© 2026 <strong>Haripal Cable TV Network</strong><br>
+    © 2026
+    <strong>Haripal Cable TV Network</strong>
+    <br>
 
-Connecting Homes with Trust, Technology & Reliable Entertainment.
+    Connecting Homes with Trust, Technology &
+    Reliable Entertainment.
 
 </p>
 
 </div>
 
 </footer>
-<!-- ================= AOS ================= -->
+
+
+
+<!-- =====================================================
+     AOS
+===================================================== -->
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
+
 <script>
 
-/*====================================
-AOS INITIALIZATION
-====================================*/
+/* =========================================================
+   AOS INITIALIZATION
+========================================================= */
 
 AOS.init({
-duration:900,
-once:true,
-offset:120
+
+    duration:900,
+
+    once:true,
+
+    offset:100,
+
+    easing:'ease-out-cubic'
+
 });
 
 
-/*====================================
-MOBILE MENU
-====================================*/
 
-const menuToggle=document.querySelector(".menu-toggle");
-const navLinks=document.querySelector(".nav-links");
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle =
+    document.querySelector(".menu-toggle");
+
+const navLinks =
+    document.querySelector(".nav-links");
+
 
 menuToggle.addEventListener("click",()=>{
 
-navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
 
 });
 
 
-/* Close menu after clicking */
+/* Close mobile menu */
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
 
-link.addEventListener("click",()=>{
+    link.addEventListener("click",()=>{
 
-navLinks.classList.remove("active");
+        navLinks.classList.remove("active");
 
-});
-
-});
-
-
-/*====================================
-COUNTER ANIMATION
-====================================*/
-
-const counters=document.querySelectorAll(".counter");
-
-const counterObserver=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(!entry.isIntersecting) return;
-
-const counter=entry.target;
-
-const target=Number(counter.dataset.target);
-
-let count=0;
-
-const increment=Math.max(1,Math.ceil(target/120));
-
-function updateCounter(){
-
-count+=increment;
-
-if(count<target){
-
-counter.innerText=count;
-
-setTimeout(updateCounter, 15);
-
-}else{
-
-counter.innerText=target+"+";
-
-}
-
-}
-
-updateCounter();
-
-counterObserver.unobserve(counter);
+    });
 
 });
 
-},{
-threshold:0.5
-});
+
+
+/* =========================================================
+   COUNTER ANIMATION
+========================================================= */
+
+const counters =
+    document.querySelectorAll(".counter");
+
+
+const counterObserver =
+    new IntersectionObserver(
+
+        (entries)=>{
+
+            entries.forEach(entry=>{
+
+                if(!entry.isIntersecting)
+                    return;
+
+
+                const counter =
+                    entry.target;
+
+
+                const target =
+                    Number(counter.dataset.target);
+
+
+                let count = 0;
+
+
+                const duration = 1800;
+
+                const startTime =
+                    performance.now();
+
+
+                function updateCounter(currentTime){
+
+                    const progress =
+                        Math.min(
+                            (currentTime - startTime) / duration,
+                            1
+                        );
+
+
+                    const eased =
+                        1 -
+                        Math.pow(
+                            1 - progress,
+                            3
+                        );
+
+
+                    count =
+                        Math.floor(
+                            eased * target
+                        );
+
+
+                    counter.innerText =
+                        count;
+
+
+                    if(progress < 1){
+
+                        requestAnimationFrame(
+                            updateCounter
+                        );
+
+                    }else{
+
+                        counter.innerText =
+                            target + "+";
+
+                    }
+
+                }
+
+
+                requestAnimationFrame(
+                    updateCounter
+                );
+
+
+                counterObserver.unobserve(
+                    counter
+                );
+
+            });
+
+        },
+
+        {
+            threshold:.5
+        }
+
+    );
+
 
 counters.forEach(counter=>{
 
-counterObserver.observe(counter);
+    counterObserver.observe(counter);
 
 });
 
 
-/*====================================
-ACTIVE NAVIGATION
-====================================*/
 
-const currentPage=window.location.pathname.split("/").pop();
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
+const currentPage =
+    window.location.pathname
+    .split("/")
+    .pop();
 
-const href=link.getAttribute("href");
 
-if(href===currentPage){
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
 
-link.style.color="#2563eb";
-link.style.fontWeight="700";
+    const href =
+        link.getAttribute("href");
 
-}
+
+    if(
+        href === currentPage ||
+        (
+            currentPage === "about.html" &&
+            href === "about.html"
+        )
+    ){
+
+        link.classList.add("active");
+
+    }
 
 });
 
 
-/*====================================
-HEADER SHADOW ON SCROLL
-====================================*/
 
-const header=document.querySelector("header");
+/* =========================================================
+   HEADER SHADOW
+========================================================= */
+
+const header =
+    document.querySelector("header");
+
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>40){
+    if(window.scrollY > 40){
 
-header.style.boxShadow="0 10px 30px rgba(0,0,0,.12)";
+        header.style.boxShadow =
+            "0 12px 35px rgba(0,0,0,.14)";
 
-}else{
+    }else{
 
-header.style.boxShadow="0 8px 25px rgba(0,0,0,.08)";
+        header.style.boxShadow =
+            "0 8px 25px rgba(0,0,0,.08)";
 
-}
+    }
+
+});
+
+
+
+/* =========================================================
+   CINEMATIC HERO PARALLAX
+========================================================= */
+
+const hero =
+    document.querySelector(".hero");
+
+
+window.addEventListener("scroll",()=>{
+
+    if(window.innerWidth > 768){
+
+        const scrolled =
+            window.pageYOffset;
+
+        hero.style.backgroundPositionY =
+            `${scrolled * .35}px`;
+
+    }
+
+});
+
+
+
+/* =========================================================
+   ESC KEY CLOSE MOBILE MENU
+========================================================= */
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.key === "Escape"){
+
+        navLinks.classList.remove("active");
+
+    }
 
 });
 
 </script>
 
+<script src="site-settings.js"></script>
 </body>
 
 </html>
