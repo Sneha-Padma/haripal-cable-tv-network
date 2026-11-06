@@ -23,7 +23,100 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 >
 
 <style>
+/* =================================
+   MULTILINGUAL LANGUAGE SELECTOR
+================================= */
 
+.site-controls {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.language-selector {
+    position: relative;
+}
+
+.language-toggle {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(37, 99, 235, .2);
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #2563eb;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .35s;
+}
+
+.language-toggle:hover {
+    background: #2563eb;
+    color: white;
+    transform: rotate(15deg);
+    box-shadow: 0 0 20px rgba(37, 99, 235, .35);
+}
+
+.language-menu {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    width: 190px;
+    padding: 12px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: .3s;
+    z-index: 1000;
+}
+
+.language-selector.open .language-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-menu-title {
+    padding: 8px 10px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #334155;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: .25s;
+}
+
+.language-option:hover,
+.language-option.active {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.language-option span {
+    font-size: 18px;
+}
+
+@media(max-width: 992px) {
+    .site-controls {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+}
 /* =========================================================
    GLOBAL RESET
 ========================================================= */
@@ -511,88 +604,9 @@ header{
     line-height:1.9;
 }
 
-/* =====================================================
-   DAY / NIGHT EMOJI BUTTON
-===================================================== */
-
-.theme-toggle {
-
-    width:48px !important;
-    height:48px !important;
-
-    padding:0 !important;
-
-    display:flex !important;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50% !important;
-
-    border:1px solid rgba(37,99,235,.20) !important;
-
-    background:rgba(255,255,255,.85) !important;
-
-    color:#111 !important;
-
-    font-size:24px !important;
-
-    line-height:1 !important;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 6px 20px rgba(0,0,0,.10);
-
-    transition:
-        transform .35s ease,
-        background .35s ease,
-        box-shadow .35s ease;
-
-}
 
 
-/* HOVER */
 
-.theme-toggle:hover {
-
-    transform:
-        rotate(15deg)
-        scale(1.12);
-
-    box-shadow:
-        0 8px 25px rgba(37,99,235,.25);
-
-}
-
-
-/* NIGHT MODE BUTTON */
-
-html[data-theme="dark"] .theme-toggle {
-
-    background:
-        rgba(255,255,255,.10) !important;
-
-    border-color:
-        rgba(125,211,252,.25) !important;
-
-}
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .theme-toggle {
-
-        width:44px !important;
-        height:44px !important;
-
-        font-size:22px !important;
-
-    }
-
-}
 /* =========================================================
    BACK BUTTON
 ========================================================= */
@@ -2259,59 +2273,22 @@ footer{
 
 <ul class="nav-links">
 
-    <li>
-        <a href="index.html#feeds">
-            Feeds
-        </a>
-    </li>
+ <li><a href="index.html#feeds" data-i18n="nav.feeds">Feeds</a></li>
 
-    <li>
-        <a href="services.html">
-            Services
-        </a>
-    </li>
+    <li><a class="active" href="services.html" data-i18n="nav.services">Services</a></li>
 
-    <li>
-        <a href="gallery.html">
-            Gallery
-        </a>
-    </li>
+    <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
 
-    <li>
-        <a href="team.html" class="active">
-            We Are
-        </a>
-    </li>
+    <li><a class="active" href="team.html" data-i18n="nav.team">We Are</a></li>
 
-    <li>
-        <a href="about.html">
-            About
-        </a>
-    </li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
 
-    <li>
-        <a href="contact.html">
-            Contact
-        </a>
-    </li>
+    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
 
 </ul>
 
 
 <!-- MOBILE MENU -->
-<div class="site-controls">
-
-    <button
-    type="button"
-    class="theme-toggle"
-    aria-label="Switch to Night Mode"
-    title="Night Mode">
-
-    🌙
-
-</button>
-
-</div>
 <div class="menu-toggle"
      aria-label="Open navigation menu"
      role="button"
@@ -3269,7 +3246,10 @@ document.querySelectorAll(".nav-links a")
 });
 
 </script>
-<script src="site-settings.js"></script>
+<script src="script.js"></script>
+<script src="site-setting.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/language.js"></script>
 </body>
 
 </html>

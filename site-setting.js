@@ -52,16 +52,42 @@
            ACTIVE LANGUAGE BUTTON
         ================================= */
 
-        document
-            .querySelectorAll("[data-language]")
-            .forEach(function (button) {
+       
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
 
-                button.classList.toggle(
-                    "active",
-                    button.dataset.language === language
-                );
+const currentPage = window.location.pathname
+    .split("/")
+    .pop()
+    .toLowerCase();
 
-            });
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    // Remove any previously assigned active class
+    link.classList.remove("active");
+
+    // Match the current HTML page
+    if (href && href.toLowerCase() === currentPage) {
+        link.classList.add("active");
+    }
+
+});
+
+// Special handling for the homepage
+if (currentPage === "" || currentPage === "index.html") {
+
+    const feedsLink = document.querySelector(
+        '.nav-links a[data-i18n="nav.feeds"]'
+    );
+
+    if (feedsLink) {
+        feedsLink.classList.add("active");
+    }
+
+}
 
     }
 
